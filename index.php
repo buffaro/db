@@ -47,7 +47,7 @@
         <input type="text" class="form-control" id="loc" placeholder="">
       </div>
       <div class="d-flex justify-content-between">
-        <button type="button" class="btn btn-outline-success">Submit</button>
+        <button type="submit" class="btn btn-outline-success">Submit</button>
         <button type="button" class="btn btn-outline-warning">Clear</button>
       </div>
     </div>
