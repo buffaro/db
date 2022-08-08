@@ -15,42 +15,43 @@
 </head>
 
 <body>
-  <div class="container">
-    <h2>Devices Data</h2>
-    <div class="mb-3">
-      <label for="hos_code" class="form-label">Hospital Code</label>
-      <input type="text" class="form-control" id="hos_code" placeholder="CHC-00000">
+  <form action="insert_data.php" method="post">
+    <div class="container">
+      <h2>Devices Data</h2>
+      <div class="mb-3">
+        <label for="hos_code" class="form-label">Hospital Code</label>
+        <input type="text" class="form-control" id="hos_code" placeholder="CHC-00000">
+      </div>
+      <div class="mb-3">
+        <label for="ref_code" class="form-label">Reference Code</label>
+        <input type="text" class="form-control" id="ref_code" placeholder="CPY-XX-00">
+      </div>
+      <div class="mb-3">
+        <label for="ref_code" class="form-label">Device Name</label>
+        <input type="text" class="form-control" id="ref_code" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="brand" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="model" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="sn" class="form-label">Serial Number</label>
+        <input type="text" class="form-control" id="sn" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="loc" class="form-label">Location</label>
+        <input type="text" class="form-control" id="loc" placeholder="">
+      </div>
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-success">Submit</button>
+        <button type="button" class="btn btn-outline-warning">Clear</button>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="ref_code" class="form-label">Reference Code</label>
-      <input type="text" class="form-control" id="ref_code" placeholder="CPY-XX-00">
-    </div>
-    <div class="mb-3">
-      <label for="ref_code" class="form-label">Device Name</label>
-      <input type="text" class="form-control" id="ref_code" placeholder="">
-    </div>
-    <div class="mb-3">
-      <label for="brand" class="form-label">Brand</label>
-      <input type="text" class="form-control" id="brand" placeholder="">
-    </div>
-    <div class="mb-3">
-      <label for="model" class="form-label">Model</label>
-      <input type="text" class="form-control" id="model" placeholder="">
-    </div>
-    <div class="mb-3">
-      <label for="sn" class="form-label">Serial Number</label>
-      <input type="text" class="form-control" id="sn" placeholder="">
-    </div>
-    <div class="mb-3">
-      <label for="loc" class="form-label">Location</label>
-      <input type="text" class="form-control" id="loc" placeholder="">
-    </div>
-    <div class="d-flex justify-content-between">
-      <button type="button" class="btn btn-outline-success">Submit</button>
-      <button type="button" class="btn btn-outline-warning">Clear</button>
-    </div>
-
-  </div>
+  </form>
 </body>
 
 </html>
