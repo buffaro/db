@@ -45,7 +45,7 @@
     if ($row = mysqli_fetch_array($result)) {
     ?>
 
-        <form action="insert_data.php" method="post">
+        <form action="insert_data_bsm.php" method="post">
             <div class="container">
                 <h2>Cal Data : <span style="color:blueviolet">Bedside Monitor</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
