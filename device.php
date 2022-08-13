@@ -26,7 +26,7 @@
     $sql = "SELECT * FROM cpy WHERE Code = '".$device."'";
     $result = mysqli_query($conn, $sql);
     if ($row = mysqli_fetch_array($result)) {
-        if($row['Name'] == "Bedside Monitor"){
+        if($row['Name'] == "Bedside Monitor" || $row['Name'] == "Vital Signs Monitor" || $row['Name'] == "Monitor(MRI)" || $row['Name'] == "Monitor CT"){
             $cal_selector = "bsm";    
         }
         else{
