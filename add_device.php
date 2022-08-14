@@ -34,6 +34,7 @@
   </script>
   <form action="insert_data.php" method="post">
     <div class="container">
+      <!-- Forn -->
       <h2>Devices Data</h2>
       <div class="mb-3">
         <label for="hos_code" class="form-label">Hospital Code</label>
@@ -148,6 +149,11 @@
           <option value="X-ray">X-ray</option>
         </select>
       </div>
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment</label>
+        <input type="text" class="form-control" name="comment" placeholder="Ex. Envelope Shift, Sensor" value="">
+      </div>
+      <!-- Button -->
       <div class="d-flex justify-content-between">
         <button type="submit" class="btn btn-outline-success">Submit</button>
         <button type="button" class="btn btn-outline-warning">Clear</button>

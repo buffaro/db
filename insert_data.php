@@ -36,7 +36,7 @@
         $Comment = $_REQUEST['comment'];
 
         //----------------------------SQL--------------------------------
-        $sql = "UPDATE cpy SET 
+        $sql = "INSERT INTO cpy SET 
             Code = '$Code'
             ,Ward = '$Ward'
             ,Name = '$Name'
@@ -45,11 +45,10 @@
             ,SN = '$SN'
             ,Ref = '$Ref'
             ,Comment = '$Comment'
-            WHERE Code = '$Code'
             ";
 
         if (mysqli_query($conn, $sql)) {
-            echo "<button type='button' class='btn btn-success'>อัปเดตข้อมูลเรียบร้อยแล้ว</button>";
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=device.php?id='.$Code);
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);

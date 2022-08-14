@@ -72,6 +72,7 @@
 
         <form action="update_data.php" method="post">
             <div class="container">
+                <!-- Form -->
                 <h2>Devices Data</h2>
                 <div class="mb-3">
                     <label for="hos_code" class="form-label">Hospital Code</label>
@@ -101,7 +102,13 @@
                     <label for="loc" class="form-label">Location</label>
                     <input type="text" class="form-control" name="loc" placeholder="" value="<?php echo $row['Ward']; ?>">
                 </div>
-                <div class="d-flex justify-content-between">
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <input type="text" class="form-control" name="comment" placeholder="" value="<?php echo $row['Comment']; ?>">
+                </div>
+
+                <!-- Button -->
+                <div class="d-flex justify-content-between"> 
                     <button type="button" class="btn btn-success w-100" onclick="window.open('cal_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">Cal</button>
                     <button type="submit" class="btn btn-outline-warning">Update</button>
                 </div>
