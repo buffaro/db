@@ -50,7 +50,7 @@
                 <h2>Cal Data : <span style="color:blueviolet">Pressure Device</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
 
-                <!-- Pressire -->
+                <!-- Pressure -->
                 <label for="hos_code" class="form-label">Pressure</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Pressure Unit</span>

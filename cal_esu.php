@@ -581,7 +581,7 @@
                     <input type="number" step="0.01" name="Br3_Coag3_6" class="form-control">
                 </div>
                 <hr>
-                <!-- BI COAG 3 -->
+                <!-- HF Leakage 3 -->
                 <label for="hos_code" class="form-label">HF Leakage</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">HF Leakage – Active to Earth (mA)</span>

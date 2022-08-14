@@ -8,6 +8,7 @@ CREATE TABLE cpy(
   ,SN      VARCHAR(50)
   ,Ref     VARCHAR(50)
   ,Caldate DATE 
+  ,PMdate DATE 
   ,Comment VARCHAR(200)
 );
 INSERT INTO cpy(ID,Code,Ward,Name,Brand,Model,SN,Ref,Caldate,Comment) VALUES (1,'CHC-00034','Ward 8B','Sphygmomanometer','BAUMANOMETER','-','CH 0617','BP-19','2021-08-18',NULL);

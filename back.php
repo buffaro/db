@@ -1,8 +1,4 @@
-'$S1_PR1_Raw','$S1_PR2_Raw','$S1_PR3_Raw','$S1_PR4_Raw','$S1_PR5_Raw','$S1_PR6_Raw','$S1_PR7_Raw','$S1_PR8_Raw','$S1_PR9_Raw','$S1_PR10_Raw','$S1_PR11_Raw',
-            '$S1_PR1_Cal','$S1_PR2_Cal','$S1_PR3_Cal','$S1_PR4_Cal','$S1_PR5_Cal','$S1_PR6_Cal','$S1_PR7_Cal','$S1_PR8_Cal','$S1_PR9_Cal','$S1_PR10_Cal','$S1_PR11_Cal',
-            '$S1_Cur1_Raw','$S1_Cur2_Raw','$S1_Cur3_Raw','$S1_Cur4_Raw',
-            '$S1_Cur1_Cal','$S1_Cur2_Cal','$S1_Cur3_Cal','$S1_Cur4_Cal',
-            '$S2_PR1_Raw','$S2_PR2_Raw','$S2_PR3_Raw','$S2_PR4_Raw','$S2_PR5_Raw','$S2_PR6_Raw','$S2_PR7_Raw','$S2_PR8_Raw','$S2_PR9_Raw','$S2_PR10_Raw','$S2_PR11_Raw',
-            '$S2_PR1_Cal','$S2_PR2_Cal','$S2_PR3_Cal','$S2_PR4_Cal','$S2_PR5_Cal','$S2_PR6_Cal','$S2_PR7_Cal','$S2_PR8_Cal','$S2_PR9_Cal','$S2_PR10_Cal','$S2_PR11_Cal',          
-            '$S2_Cur1_Raw','$S2_Cur2_Raw','$S2_Cur3_Raw','$S2_Cur4_Raw',
-            '$S2_Cur1_Cal','$S2_Cur2_Cal','$S2_Cur3_Cal','$S2_Cur4_Cal'
+'$PM_P_Checked1','$PM_P_Checked2','$PM_P_Checked3','$PM_P_Checked4','$PM_P_Checked5','$PM_P_Checked6','$PM_P_Checked7','$PM_P_Checked8','$PM_P_Checked9','$PM_P_Checked10',
+            '$PM_P_Checked11','$PM_P_Checked12','$PM_P_Checked13','$PM_P_Checked14','$PM_P_Checked15','$PM_P_Checked16','$PM_P_Checked17','$PM_P_Checked18','$PM_P_Checked19','$PM_P_Checked20',
+            '$PM_P_Checked21','$PM_P_Checked22','$PM_P_Checked23','$PM_P_Checked24','$PM_P_Checked25','$PM_P_Checked26','$PM_P_Checked27','$PM_P_Checked28','$PM_P_Checked29','$PM_P_Checked30',
+            '$PM_P_Checked31','$PM_P_Checked32','$PM_P_Checked33','$PM_P_Checked34','$PM_P_Checked35','$PM_P_Checked36','$PM_P_Checked37','$PM_P_Checked38','$PM_P_Checked39','$PM_P_Checked40'

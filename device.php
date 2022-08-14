@@ -204,10 +204,13 @@
 
                 <!-- Button -->
                 <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-success w-100" onclick="window.open('cal_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
-                        <h2>Cal</h2> [ ล่าสุด <?php echo $row['Caldate']; ?> ]
+                    <button type="button" class="btn btn-success col-4" onclick="window.open('cal_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
+                        <h2>CAL</h2> [ ล่าสุด: <?php echo $row['Caldate']; ?> ]
                     </button>
-                    <button type="submit" class="btn btn-outline-warning">Update</button>
+                    <button type="button" class="btn btn-primary col-4" onclick="window.open('pm_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
+                        <h2>PM</h2> [ ล่าสุด: <?php echo $row['PMdate']; ?> ]
+                    </button>
+                    <button type="submit" class="btn btn-outline-warning col-4"><h4>Update</h4></button>
                 </div>
 
             </div>
