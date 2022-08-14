@@ -30,7 +30,7 @@
       <button type='button' id="btnSearch" onclick="goSearch()" class="btn btn-dark w-100"><i class="fa fa-search" aria-hidden="true"></i></button>
     </div>
     <div class="col-2">
-      <button type='button' id="btnAdd" class='btn btn-success w-100'><i class="fa fa-plus" aria-hidden="true"></i></button>
+      <button type='button' id="btnAdd" onclick="window.open('add_device.php')" class='btn btn-success w-100'><i class="fa fa-plus" aria-hidden="true"></i></button>
     </div>
   </div>
 

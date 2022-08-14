@@ -15,6 +15,23 @@
 </head>
 
 <body>
+    <script>
+        $('body').on('keydown', 'input, select', function(e) {
+            if (e.key === "Enter") {
+                var self = $(this),
+                    form = self.parents('form:eq(0)'),
+                    focusable, next;
+                focusable = form.find('input,a,select,button,textarea').filter(':visible');
+                next = focusable.eq(focusable.index(this) + 1);
+                if (next.length) {
+                    next.focus();
+                } else {
+                    form.submit();
+                }
+                return false;
+            }
+        });
+    </script>
     <?php
     include_once("conf.php");
 
@@ -41,7 +58,7 @@
             || $row['Name'] == "Cloth warmer(เครื่องอุ่นผ้า)" || $row['Name'] == "Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)"
         ) {
             $cal_selector = "temp";
-        } elseif ($row['Name'] == "Infant Incubator(ตู้อบเด็กทารก)" || $row['Name'] == "Infant Warmer (ช่วยเด็กแรกเกิด)"|| $row['Name'] == "Radiant warmer(ให้ความอบอุ่นเด็กด้วยแสง)") {
+        } elseif ($row['Name'] == "Infant Incubator(ตู้อบเด็กทารก)" || $row['Name'] == "Infant Warmer (ช่วยเด็กแรกเกิด)" || $row['Name'] == "Radiant warmer(ให้ความอบอุ่นเด็กด้วยแสง)") {
             $cal_selector = "infant_incu";
         } elseif ($row['Name'] == "Centrifuge") {
             $cal_selector = "cen";
