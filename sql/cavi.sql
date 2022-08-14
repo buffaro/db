@@ -1,0 +1,65 @@
+CREATE TABLE cal_cavi(
+    ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
+    ,Code VARCHAR(20)
+    ,Caldate TIMESTAMP
+-- NIBP
+    ,S_ES VARCHAR(3) DEFAULT '0'
+    ,RA_Sys INTEGER(3) DEFAULT '120'
+    ,RA_Mean INTEGER(3) DEFAULT '93'
+    ,RA_Dia INTEGER(3) DEFAULT '80'
+    ,RA_PR INTEGER(3) DEFAULT '80'
+    ,LA_Sys INTEGER(3) DEFAULT '120'
+    ,LA_Mean INTEGER(3) DEFAULT '93'
+    ,LA_Dia INTEGER(3) DEFAULT '80'
+    ,LA_PR INTEGER(3) DEFAULT '80'
+    ,RB_Sys INTEGER(3) DEFAULT '120'
+    ,RB_Mean INTEGER(3) DEFAULT '93'
+    ,RB_Dia INTEGER(3) DEFAULT '80'
+    ,RB_PR INTEGER(3) DEFAULT '80'
+    ,LB_Sys INTEGER(3) DEFAULT '120'
+    ,LB_Mean INTEGER(3) DEFAULT '93'
+    ,LB_Dia INTEGER(3) DEFAULT '80'
+    ,LB_PR INTEGER(3) DEFAULT '80'
+    ,S_HR1 INTEGER(3) DEFAULT '60'
+    ,S_HR2 INTEGER(3) DEFAULT '90'
+    ,S_HR3 INTEGER(3) DEFAULT '120'
+    ,RA_Sys_Raw VARCHAR(50)
+    ,RA_Mean_Raw VARCHAR(50)
+    ,RA_Dia_Raw VARCHAR(50)
+    ,RA_PR_Raw VARCHAR(50)
+    ,LA_Sys_Raw VARCHAR(50)
+    ,LA_Mean_Raw VARCHAR(50)
+    ,LA_Dia_Raw VARCHAR(50)
+    ,LA_PR_Raw VARCHAR(50)
+    ,RB_Sys_Raw VARCHAR(50)
+    ,RB_Mean_Raw VARCHAR(50)
+    ,RB_Dia_Raw VARCHAR(50)
+    ,RB_PR_Raw VARCHAR(50)
+    ,LB_Sys_Raw VARCHAR(50) 
+    ,LB_Mean_Raw VARCHAR(50)
+    ,LB_Dia_Raw VARCHAR(50)
+    ,LB_PR_Raw VARCHAR(50)
+    ,RA_Sys_Cal FLOAT(10)
+    ,RA_Mean_Cal FLOAT(10)
+    ,RA_Dia_Cal FLOAT(10)
+    ,RA_PR_Cal FLOAT(10)
+    ,LA_Sys_Cal FLOAT(10)
+    ,LA_Mean_Cal FLOAT(10)
+    ,LA_Dia_Cal FLOAT(10)
+    ,LA_PR_Cal FLOAT(10)
+    ,RB_Sys_Cal FLOAT(10)
+    ,RB_Mean_Cal FLOAT(10)
+    ,RB_Dia_Cal FLOAT(10)
+    ,RB_PR_Cal FLOAT(10)
+    ,LB_Sys_Cal FLOAT(10)
+    ,LB_Mean_Cal FLOAT(10)
+    ,LB_Dia_Cal FLOAT(10)
+    ,LB_PR_Cal FLOAT(10)
+-- ECG
+    ,S_HR1_Raw VARCHAR(50)
+    ,S_HR2_Raw VARCHAR(50)
+    ,S_HR3_Raw VARCHAR(50)
+    ,S_HR1_Cal FLOAT(10)
+    ,S_HR2_Cal FLOAT(10)
+    ,S_HR3_Cal FLOAT(10)
+);

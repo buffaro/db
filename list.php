@@ -16,81 +16,82 @@
 </head>
 
 <body>
-<style>
-    .header{
-        position:sticky;
-        top: 0 ;
+  <style>
+    .header {
+      position: sticky;
+      top: 0;
     }
-</style>
-<div class="row g-0">
-        <div class="col-10">
-            <input id="inSearch" value="" class="form-control" placeholder="Enter Code or SN">
-        </div>
-        <div class="col-2">
-            <button id="btnSearch" onclick="goSearch()" class="btn btn-dark w-100">ค้นหา</button>
-        </div>
-</div>
+  </style>
+  <div class="row g-0">
+    <div class="col-10">
+      <input id="inSearch" value="" class="form-control" placeholder="Enter Code or SN">
+    </div>
+    <div class="col-2">
+      <button id="btnSearch" onclick="goSearch()" class="btn btn-dark w-100">ค้นหา</button>
+    </div>
+  </div>
 
 
-<script>
-var input = document.getElementById("inSearch");
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("btnSearch").click();
-  }
-});
-
-function goSearch(){
-    let q = document.getElementById("inSearch").value;
-    window.open('?code='+q,'_self')
-}
-
-$(document).ready(function(){
-    $('table tr').click(function(){
-        window.location = $(this).attr('href');
-        return false;
+  <script>
+    var input = document.getElementById("inSearch");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("btnSearch").click();
+      }
     });
-});
 
-</script>
+    function goSearch() {
+      let q = document.getElementById("inSearch").value;
+      window.open('?code=' + q, '_self')
+    }
 
-<?php
-include_once("conf.php");
+    $(document).ready(function() {
+      $('table tr').click(function() {
+        if($(this).attr('href') != '#'){
+          window.open($(this).attr('href'));
+        }
+        return false;
+      });
+    });
+  </script>
 
-$conn = new mysqli($cpy_server, $cpy_user, $cpy_pass, $cpy_db);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+  <?php
+  include_once("conf.php");
 
-$code = isset($_GET['code'])? $_GET['code'] : "";
+  $conn = new mysqli($cpy_server, $cpy_user, $cpy_pass, $cpy_db);
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+  $code = isset($_GET['code']) ? $_GET['code'] : "";
 
 
 
-$sql="SELECT * FROM cpy WHERE Code LIKE '%$code%' OR SN LIKE '%$code%'";
-$result = mysqli_query($conn, $sql);
+  $sql = "SELECT * FROM cpy WHERE Code LIKE '%$code%'OR Ref LIKE '%$code%' ORDER BY Ref ASC";
+  $result = mysqli_query($conn, $sql);
 
-echo "<table class='table table-striped table-dark'>
-<tr class='header'>
+  echo "<table class='table table-striped table-dark'>
+<tr href='#' class='header'>
 <th>Code</th>
 <th>Name</th>
 <th>Brand</th>
 <th>Model</th>
-<th>SN</th>
+<th>Ref</th>
 </tr>";
-while($row = mysqli_fetch_array($result)) {
-  echo "<tr href='device.php?id=". $row['Code'] ."'>";
-  echo "<td>" . $row['Code'] . "</td>";
-  echo "<td>" . $row['Name'] . "</td>";
-  echo "<td>" . $row['Brand'] . "</td>";
-  echo "<td>" . $row['Model'] . "</td>";
-  echo "<td>" . $row['SN'] . "</td>";
-  echo "</tr>";
-}
-echo "</table>";
-mysqli_close($conn);
+  while ($row = mysqli_fetch_array($result)) {
+    echo "<tr href='device.php?id=" . $row['Code'] . "'>";
+    echo "<td>" . $row['Code'] . "</td>";
+    echo "<td>" . $row['Name'] . "</td>";
+    echo "<td>" . $row['Brand'] . "</td>";
+    echo "<td>" . $row['Model'] . "</td>";
+    echo "<td>" . $row['Ref'] . "</td>";
+    echo "</tr>";
+  }
+  echo "</table>";
+  mysqli_close($conn);
 
-?>
+  ?>
 
 
 </body>

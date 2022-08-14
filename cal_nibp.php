@@ -45,9 +45,9 @@
     if ($row = mysqli_fetch_array($result)) {
     ?>
 
-        <form action="insert_data_bsm.php" method="post">
+        <form action="insert_data_nibp.php" method="post">
             <div class="container">
-                <h2>Cal Data : <span style="color:blueviolet">Bedside Monitor</span></h2>
+                <h2>Cal Data : <span style="color:blueviolet">NIBP</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
                 
                 <!-- Normal -->
@@ -139,84 +139,6 @@
                     <input type="number" step="0.01" name="lor3_mean" class="form-control">
                     <input type="number" step="0.01" name="lor3_dias" class="form-control">
                     <input type="number" step="0.01" name="lor3_pr" class="form-control">
-                </div>
-                <!-- ECG -->
-                <label for="hos_code" class="form-label">ECG</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Set</span>
-                    <input type="number" step="0.01" name="ecgs_60" class="form-control" value="60" disabled>
-                    <input type="number" step="0.01" name="ecgs_90" class="form-control" value="90" disabled>
-                    <input type="number" step="0.01" name="ecgs_120" class="form-control" value="120" disabled>
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 1</span>
-                    <input type="number" step="0.01" name="ecgr1_60" class="form-control">
-                    <input type="number" step="0.01" name="ecgr1_90" class="form-control">
-                    <input type="number" step="0.01" name="ecgr1_120" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 2</span>
-                    <input type="number" step="0.01" name="ecgr2_60" class="form-control">
-                    <input type="number" step="0.01" name="ecgr2_90" class="form-control">
-                    <input type="number" step="0.01" name="ecgr2_120" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 3</span>
-                    <input type="number" step="0.01" name="ecgr3_60" class="form-control">
-                    <input type="number" step="0.01" name="ecgr3_90" class="form-control">
-                    <input type="number" step="0.01" name="ecgr3_120" class="form-control">
-                </div>
-                <!-- SpO2 -->
-                <label for="hos_code" class="form-label">SpO2</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Set</span>
-                    <input type="number" step="0.01" name="pos_90" class="form-control" value="90" disabled>
-                    <input type="number" step="0.01" name="pos_94" class="form-control" value="94" disabled>
-                    <input type="number" step="0.01" name="pos_98" class="form-control" value="98" disabled>
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 1</span>
-                    <input type="number" step="0.01" name="por1_90" class="form-control">
-                    <input type="number" step="0.01" name="por1_94" class="form-control">
-                    <input type="number" step="0.01" name="por1_98" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 2</span>
-                    <input type="number" step="0.01" name="por2_90" class="form-control">
-                    <input type="number" step="0.01" name="por2_94" class="form-control">
-                    <input type="number" step="0.01" name="por2_98" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 3</span>
-                    <input type="number" step="0.01" name="por3_90" class="form-control">
-                    <input type="number" step="0.01" name="por3_94" class="form-control">
-                    <input type="number" step="0.01" name="por3_98" class="form-control">
-                </div>
-                <!-- Respiration -->
-                <label for="hos_code" class="form-label">Respiration</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Set</span>
-                    <input type="number" step="0.01" name="ress_20" class="form-control" value="20" disabled>
-                    <input type="number" step="0.01" name="ress_30" class="form-control" value="30" disabled>
-                    <input type="number" step="0.01" name="ress_40" class="form-control" value="40" disabled>
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 1</span>
-                    <input type="number" step="0.01" name="resr1_20" class="form-control">
-                    <input type="number" step="0.01" name="resr1_30" class="form-control">
-                    <input type="number" step="0.01" name="resr1_40" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 2</span>
-                    <input type="number" step="0.01" name="resr2_20" class="form-control">
-                    <input type="number" step="0.01" name="resr2_30" class="form-control">
-                    <input type="number" step="0.01" name="resr2_40" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text col-3">Read 3</span>
-                    <input type="number" step="0.01" name="resr3_20" class="form-control">
-                    <input type="number" step="0.01" name="resr3_30" class="form-control">
-                    <input type="number" step="0.01" name="resr3_40" class="form-control">
                 </div>
                 <!-- Button -->
                 <div class="d-flex justify-content-between">

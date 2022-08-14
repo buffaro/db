@@ -1,0 +1,35 @@
+CREATE TABLE cal_ecg(
+    ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
+    ,Code VARCHAR(20)
+    ,Caldate TIMESTAMP
+-- ECG
+    ,S_HR1 INTEGER(3) DEFAULT '60'
+    ,S_HR2 INTEGER(3) DEFAULT '90'
+    ,S_HR3 INTEGER(3) DEFAULT '120'
+    ,S_HR4 INTEGER(3) DEFAULT '180'
+    ,S_HR1_Raw VARCHAR(50)
+    ,S_HR2_Raw VARCHAR(50)
+    ,S_HR3_Raw VARCHAR(50)
+    ,S_HR4_Raw VARCHAR(50)
+    ,S_HR1_Cal FLOAT(10)
+    ,S_HR2_Cal FLOAT(10)
+    ,S_HR3_Cal FLOAT(10)
+    ,S_HR4_Cal FLOAT(10)
+-- Speed
+    ,S_Spd1 INTEGER(3) DEFAULT '25'
+    ,S_Spd2 INTEGER(3) DEFAULT '50'
+    ,S_Spd1_Raw VARCHAR(50)
+    ,S_Spd2_Raw VARCHAR(50)
+    ,S_Spd1_Cal FLOAT(10)
+    ,S_Spd2_Cal FLOAT(10)
+-- Sensitivity
+    ,S_Sen1 INTEGER(3) DEFAULT '5'
+    ,S_Sen2 INTEGER(3) DEFAULT '10'
+    ,S_Sen3 INTEGER(3) DEFAULT '20'
+    ,S_Sen1_Raw VARCHAR(50)
+    ,S_Sen2_Raw VARCHAR(50)
+    ,S_Sen3_Raw VARCHAR(50)
+    ,S_Sen1_Cal FLOAT(10)
+    ,S_Sen2_Cal FLOAT(10)
+    ,S_Sen3_Cal FLOAT(10)
+);

@@ -2,7 +2,7 @@ CREATE TABLE cpy(
    ID      INTEGER  NOT NULL PRIMARY KEY AUTO_INCREMENT
   ,Code    VARCHAR(20) NOT NULL
   ,Ward    VARCHAR(50)
-  ,Name    VARCHAR(50)
+  ,Name    VARCHAR(100)
   ,Brand   VARCHAR(50)
   ,Model   VARCHAR(50)
   ,SN      VARCHAR(50)

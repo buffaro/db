@@ -1,4 +1,4 @@
-CREATE TABLE cal_bsm(
+CREATE TABLE cal_nibp(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
@@ -40,36 +40,4 @@ CREATE TABLE cal_bsm(
     ,SH_Mean_Cal FLOAT(10)
     ,SH_Dia_Cal FLOAT(10)
     ,SH_PR_Cal FLOAT(10)
--- ECG
-    ,S_HR1 INTEGER(3) DEFAULT '60'
-    ,S_HR2 INTEGER(3) DEFAULT '90'
-    ,S_HR3 INTEGER(3) DEFAULT '120'
-    ,S_HR1_Raw VARCHAR(50)
-    ,S_HR2_Raw VARCHAR(50)
-    ,S_HR3_Raw VARCHAR(50)
-    ,S_HR1_Cal FLOAT(10)
-    ,S_HR2_Cal FLOAT(10)
-    ,S_HR3_Cal FLOAT(10)
--- Pulse Oximeter
-    ,S_Sensor VARCHAR(20) DEFAULT 'Nellcor'
-    ,S_PO1 INTEGER(3) DEFAULT '90'
-    ,S_PO2 INTEGER(3) DEFAULT '94'
-    ,S_PO3 INTEGER(3) DEFAULT '98'
-    ,S_PO1_Raw VARCHAR(50)
-    ,S_PO2_Raw VARCHAR(50)
-    ,S_PO3_Raw VARCHAR(50)
-    ,S_PO1_Cal FLOAT(10)
-    ,S_PO2_Cal FLOAT(10)
-    ,S_PO3_Cal FLOAT(10)
--- Respiration
-    ,S_Lead VARCHAR(2) DEFAULT 'LL'
-    ,S_Res1 INTEGER(3) DEFAULT '20'
-    ,S_Res2 INTEGER(3) DEFAULT '30'
-    ,S_Res3 INTEGER(3) DEFAULT '40'
-    ,S_Res1_Raw VARCHAR(50)
-    ,S_Res2_Raw VARCHAR(50)
-    ,S_Res3_Raw VARCHAR(50)
-    ,S_Res1_Cal FLOAT(10)
-    ,S_Res2_Cal FLOAT(10)
-    ,S_Res3_Cal FLOAT(10)
 );
