@@ -13,3 +13,4 @@ function avg($raw) {
     return number_format((float)array_sum(explode(",", $raw)) / $c, 2, '.', '');
   }
 ?>
+
