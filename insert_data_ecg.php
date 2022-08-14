@@ -39,13 +39,13 @@
         $S_HR3_Cal = avg($S_HR3_Raw);
         $S_HR4_Cal = avg($S_HR4_Raw);
         //----------------------------Speed--------------------------------
-        $S_Spd1_Raw= $_REQUEST['spdr1_25'] . ',' . $_REQUEST['spdr2_25'] . ',' . $_REQUEST['spdr3_25'];
+        $S_Spd1_Raw = $_REQUEST['spdr1_25'] . ',' . $_REQUEST['spdr2_25'] . ',' . $_REQUEST['spdr3_25'];
         $S_Spd2_Raw = $_REQUEST['spdr1_50'] . ',' . $_REQUEST['spdr2_50'] . ',' . $_REQUEST['spdr3_50'];
 
         $S_Spd1_Cal = avg($S_Spd1_Raw);
         $S_Spd2_Cal = avg($S_Spd2_Raw);
         //--------------------------Sensitivity-----------------------------
-        $S_Sen1_Raw= $_REQUEST['senr1_5'] . ',' . $_REQUEST['senr2_5'] . ',' . $_REQUEST['senr3_5'];
+        $S_Sen1_Raw = $_REQUEST['senr1_5'] . ',' . $_REQUEST['senr2_5'] . ',' . $_REQUEST['senr3_5'];
         $S_Sen2_Raw = $_REQUEST['senr1_10'] . ',' . $_REQUEST['senr2_10'] . ',' . $_REQUEST['senr3_10'];
         $S_Sen3_Raw = $_REQUEST['senr1_20'] . ',' . $_REQUEST['senr2_20'] . ',' . $_REQUEST['senr3_20'];
 
@@ -72,7 +72,9 @@
             '$S_Sen1_Cal','$S_Sen2_Cal','$S_Sen3_Cal'
             )";
 
-        if (mysqli_query($conn, $sql)) {
+        $Caldate = date("Y-m-d");
+        $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
+        if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
             echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=list.php');
         } else {

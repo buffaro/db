@@ -45,7 +45,7 @@
         $S_Cen3_Cal = avg($S_Cen3_Raw);
         $S_Cen4_Cal = avg($S_Cen4_Raw);
         //----------------------------Timer--------------------------------
-        $S_Time1_Raw= $_REQUEST['Timer1_5'] . ',' . $_REQUEST['Timer2_5'] . ',' . $_REQUEST['Timer3_5'];
+        $S_Time1_Raw = $_REQUEST['Timer1_5'] . ',' . $_REQUEST['Timer2_5'] . ',' . $_REQUEST['Timer3_5'];
         $S_Time2_Raw = $_REQUEST['Timer1_10'] . ',' . $_REQUEST['Timer2_10'] . ',' . $_REQUEST['Timer3_10'];
 
         $S_Time1_Cal = avg($S_Time1_Raw);
@@ -69,7 +69,9 @@
 
             )";
 
-        if (mysqli_query($conn, $sql)) {
+        $Caldate = date("Y-m-d");
+        $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
+        if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
             echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=list.php');
         } else {

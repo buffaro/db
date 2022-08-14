@@ -52,7 +52,7 @@
         $SL_Sys_Raw = $_REQUEST['lor1_sys'] . ',' . $_REQUEST['lor2_sys'] . ',' . $_REQUEST['lor3_sys'];
         $SL_Mean_Raw = $_REQUEST['lor1_mean'] . ',' . $_REQUEST['lor2_mean'] . ',' . $_REQUEST['lor3_mean'];
         $SL_Dia_Raw = $_REQUEST['lor1_dias'] . ',' . $_REQUEST['lor2_dias'] . ',' . $_REQUEST['lor3_dias'];
-        $SL_PR_Raw = $_REQUEST['lor1_pr'] . ',' . $_REQUEST['lor2_pr'] . ',' . $_REQUEST['lor3_pr'];   
+        $SL_PR_Raw = $_REQUEST['lor1_pr'] . ',' . $_REQUEST['lor2_pr'] . ',' . $_REQUEST['lor3_pr'];
 
         $SL_Sys_Cal = avg($SL_Sys_Raw);
         $SL_Mean_Cal = avg($SL_Mean_Raw);
@@ -78,7 +78,9 @@
             '$SL_Sys_Cal','$SL_Mean_Cal','$SL_Dia_Cal','$SL_PR_Cal'
             )";
 
-        if (mysqli_query($conn, $sql)) {
+        $Caldate = date("Y-m-d");
+        $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
+        if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
             echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=list.php');
         } else {

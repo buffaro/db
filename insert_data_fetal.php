@@ -73,7 +73,9 @@
             '$S2_HR1_Cal','$S2_HR2_Cal','$S2_HR3_Cal','$S2_HR4_Cal','$S2_HR4_Cal','$S2_HR5_Cal'
             )";
 
-        if (mysqli_query($conn, $sql)) {
+        $Caldate = date("Y-m-d");
+        $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
+        if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
             echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=list.php');
         } else {

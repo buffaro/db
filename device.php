@@ -66,6 +66,14 @@
             $cal_selector = "fetal";
         } elseif ($row['Name'] == "Electrosurgical Unit (ตัดจี้ด้วยไฟฟ้า)") {
             $cal_selector = "esu";
+        } elseif ($row['Name'] == "Sphygmomanometer" || $row['Name'] == "Neopuff" || $row['Name'] == "Aspirators" || $row['Name'] == "Pressure Cuff" || $row['Name'] == "Vacuum Extractor (เครื่องช่วยคลอดโดยใช้แรงดูด)") {
+            $cal_selector = "pressure";
+        } elseif ($row['Name'] == "Spiro meter") {
+            $cal_selector = "spiro";
+        } elseif ($row['Name'] == "Traction (ชุดดึงคอและหลังอัตโนมัติ)") {
+            $cal_selector = "traction";
+        } elseif ($row['Name'] == "PaceMaker (เครื่องกระตุ้นหัวใจ)") {
+            $cal_selector = "pace";
         } else {
             $cal_selector = "error";
         }
@@ -196,7 +204,9 @@
 
                 <!-- Button -->
                 <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-success w-100" onclick="window.open('cal_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">Cal</button>
+                    <button type="button" class="btn btn-success w-100" onclick="window.open('cal_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
+                        <h2>Cal</h2> [ ล่าสุด <?php echo $row['Caldate']; ?> ]
+                    </button>
                     <button type="submit" class="btn btn-outline-warning">Update</button>
                 </div>
 

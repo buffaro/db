@@ -416,7 +416,10 @@
             '$B_Coag3_1_Raw','$B_Coag3_2_Raw','$B_Coag3_3_Raw','$B_Coag3_4_Raw','$B_Coag3_5_Raw','$B_Coag3_6_Raw',
             '$B_Coag3_1_Cal','$B_Coag3_2_Cal','$B_Coag3_3_Cal','$B_Coag3_4_Cal','$B_Coag3_5_Cal','$B_Coag3_6_Cal'
             )";
-        if (mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3) && mysqli_query($conn, $sql4)) {
+
+        $Caldate = date("Y-m-d");
+        $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
+        if (mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3) && mysqli_query($conn, $sql4) && mysqli_query($conn, $upCaldate)) {
             echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=list.php');
         } else {

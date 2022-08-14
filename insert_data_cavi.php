@@ -52,7 +52,7 @@
         $RB_Sys_Raw = $_REQUEST['rbr1_sys'] . ',' . $_REQUEST['rbr2_sys'] . ',' . $_REQUEST['rbr3_sys'];
         $RB_Mean_Raw = $_REQUEST['rbr1_mean'] . ',' . $_REQUEST['rbr2_mean'] . ',' . $_REQUEST['rbr3_mean'];
         $RB_Dia_Raw = $_REQUEST['rbr1_dias'] . ',' . $_REQUEST['rbr2_dias'] . ',' . $_REQUEST['rbr3_dias'];
-        $RB_PR_Raw = $_REQUEST['rbr1_pr'] . ',' . $_REQUEST['rbr2_pr'] . ',' . $_REQUEST['rbr3_pr'];   
+        $RB_PR_Raw = $_REQUEST['rbr1_pr'] . ',' . $_REQUEST['rbr2_pr'] . ',' . $_REQUEST['rbr3_pr'];
 
         $RB_Sys_Cal = avg($RB_Sys_Raw);
         $RB_Mean_Cal = avg($RB_Mean_Raw);
@@ -62,7 +62,7 @@
         $LB_Sys_Raw = $_REQUEST['lbr1_sys'] . ',' . $_REQUEST['lbr2_sys'] . ',' . $_REQUEST['lbr3_sys'];
         $LB_Mean_Raw = $_REQUEST['lbr1_mean'] . ',' . $_REQUEST['lbr2_mean'] . ',' . $_REQUEST['lbr3_mean'];
         $LB_Dia_Raw = $_REQUEST['lbr1_dias'] . ',' . $_REQUEST['lbr2_dias'] . ',' . $_REQUEST['lbr3_dias'];
-        $LB_PR_Raw = $_REQUEST['lbr1_pr'] . ',' . $_REQUEST['lbr2_pr'] . ',' . $_REQUEST['lbr3_pr'];   
+        $LB_PR_Raw = $_REQUEST['lbr1_pr'] . ',' . $_REQUEST['lbr2_pr'] . ',' . $_REQUEST['lbr3_pr'];
 
         $LB_Sys_Cal = avg($LB_Sys_Raw);
         $LB_Mean_Cal = avg($LB_Mean_Raw);
@@ -104,7 +104,9 @@
             '$S_HR1_Cal','$S_HR2_Cal','$S_HR3_Cal'
             )";
 
-        if (mysqli_query($conn, $sql)) {
+        $Caldate = date("Y-m-d");
+        $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
+        if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
             echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
             header('refresh: 3; url=list.php');
         } else {
