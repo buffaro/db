@@ -46,10 +46,10 @@
         if ($row['Name'] == "Bedside Monitor" || $row['Name'] == "Vital Signs Monitor" || $row['Name'] == "Monitor(MRI)" || $row['Name'] == "Monitor CT") {
             $cal_selector = "bsm";
             $pm_selector = "bsm";
-        } elseif ($row['Name'] == "Digital Blood Pressure" || $row['Name'] == "Ambulatory Blood Pressure Monitoring(บันทึกความดัน)") {
+        } elseif ($row['Name'] == "Digital Blood Pressure" || $row['Name'] == "Ambulatory Blood Pressure Monitoring(บันทึกความดัน24 Hr)") {
             $cal_selector = "nibp";
             $pm_selector = "nibp";
-        } elseif ($row['Name'] == "Ankle brachial index(เครื่องตรวจสมรรถภาพหลอดเลือดแดง)") {
+        } elseif ($row['Name'] == "Ankle brachial index(เครื่องตรวจสมรรถภาพหลอดเลือดแดง)ABI") {
             $cal_selector = "cavi";
             $pm_selector = "cavi";
         } elseif ($row['Name'] == "Pulse Oximeter") {
