@@ -43,6 +43,8 @@
             $cal_selector = "temp";
         } elseif ($row['Name'] == "Infant Incubator(ตู้อบเด็กทารก)" || $row['Name'] == "Infant Warmer (ช่วยเด็กแรกเกิด)"|| $row['Name'] == "Radiant warmer(ให้ความอบอุ่นเด็กด้วยแสง)") {
             $cal_selector = "infant_incu";
+        } elseif ($row['Name'] == "Centrifuge") {
+            $cal_selector = "cen";
         } else {
             $cal_selector = "error";
         }
