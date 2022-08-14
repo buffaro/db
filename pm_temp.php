@@ -66,15 +66,18 @@
                     , "ปลั๊กไฟ AC"
                     , "สายเสียบปลั๊กไฟ AC"
                     , "จุดต่อสายดิน"
-                    , "Electrode"
-                    , "NIBP Arm Cuff"
-                    , "NIBP Tubing"
-                    , "SpO2 Sensor"
-                    , "Temperature Sensor"
-                    , "Monitor Display"
-                    , "Recorder"
-                    , "Paper"
-                   
+                    , "Heater"
+                    , "Temperature Set"
+                    , "Thermostat"
+                    , "Temperature display"
+                    , "Lamp"
+                    , "Chamber"
+                    , "Water Tank*"
+                    , "Water Pad Leak*"
+                    , "Water Pad Hose*"
+                    , "Water Pad Connector*"
+                    , "Paraffin Tank*"
+                    , "Hot Pack Hanger*"
                 );
                 $x = 1;
                 foreach ($PM_LIST1 as $value) {
@@ -94,19 +97,7 @@
                 <label for="hos_code" class="form-label">Performance Check</label>
                 <?php
                 $PM_LIST2 = array(
-                    "ECG Waveform"
-                    , "Heart Rate"
-                    , "Gain Amplifier"
-                    , "Speed Tracing 25 mm/sec"
-                    , "Speed Tracing 50 mm/sec"
-                    , "Frequency Response"
-                    , "Filter 50 Hz."
-                    , "Blood Pressure (Normal)"
-                    , "Blood Pressure (High)"
-                    , "Blood Pressure (Low)"
-                    , "Temperature"
-                    , "Respiration Rate"
-                    , "Alarm"
+                    "Temperature Control"
                    
                 );
                 $y = 1;

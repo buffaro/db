@@ -66,14 +66,15 @@
                     , "ปลั๊กไฟ AC"
                     , "สายเสียบปลั๊กไฟ AC"
                     , "จุดต่อสายดิน"
-                    , "Electrode"
-                    , "NIBP Arm Cuff"
-                    , "NIBP Tubing"
-                    , "SpO2 Sensor"
-                    , "Temperature Sensor"
-                    , "Monitor Display"
-                    , "Recorder"
-                    , "Paper"
+                    , "Patient Plate"
+                    , "Active Electrode"
+                    , "Patient Plate Jack"
+                    , "Active Electrode Jack"
+                    , "Foot Switch"
+                    , "Power display on panel"
+                    , "Power knob adjustment"
+                    , "Loudspeaker or Buzzer"
+                    , "Fan"
                    
                 );
                 $x = 1;
@@ -94,18 +95,12 @@
                 <label for="hos_code" class="form-label">Performance Check</label>
                 <?php
                 $PM_LIST2 = array(
-                    "ECG Waveform"
-                    , "Heart Rate"
-                    , "Gain Amplifier"
-                    , "Speed Tracing 25 mm/sec"
-                    , "Speed Tracing 50 mm/sec"
-                    , "Frequency Response"
-                    , "Filter 50 Hz."
-                    , "Blood Pressure (Normal)"
-                    , "Blood Pressure (High)"
-                    , "Blood Pressure (Low)"
-                    , "Temperature"
-                    , "Respiration Rate"
+                    "CUT Mode"
+                    , "COAG Mode"
+                    , "BIPOLAR"
+                    , "HF Leakage"
+                    , "Return Electrode Monitoring"
+                    , "Sound signal"
                     , "Alarm"
                    
                 );

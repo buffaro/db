@@ -66,14 +66,15 @@
                     , "ปลั๊กไฟ AC"
                     , "สายเสียบปลั๊กไฟ AC"
                     , "จุดต่อสายดิน"
-                    , "Electrode"
-                    , "NIBP Arm Cuff"
-                    , "NIBP Tubing"
-                    , "SpO2 Sensor"
-                    , "Temperature Sensor"
-                    , "Monitor Display"
-                    , "Recorder"
-                    , "Paper"
+                    , "ล้อเลื่อน"
+                    , "Hood"
+                    , "Bed"
+                    , "Filter"
+                    , "ถังน้ำ"
+                    , "Temperature Display"
+                    , "Temperature Adjust"
+                    , "Oxygen Flow Meter"
+                    , "Suction"
                    
                 );
                 $x = 1;
@@ -94,19 +95,11 @@
                 <label for="hos_code" class="form-label">Performance Check</label>
                 <?php
                 $PM_LIST2 = array(
-                    "ECG Waveform"
-                    , "Heart Rate"
-                    , "Gain Amplifier"
-                    , "Speed Tracing 25 mm/sec"
-                    , "Speed Tracing 50 mm/sec"
-                    , "Frequency Response"
-                    , "Filter 50 Hz."
-                    , "Blood Pressure (Normal)"
-                    , "Blood Pressure (High)"
-                    , "Blood Pressure (Low)"
-                    , "Temperature"
-                    , "Respiration Rate"
+                    "Temperature Control"
+                    , "Sound Level"
                     , "Alarm"
+                    , "Flow Rate"
+                    , "Vacuum Regulator"
                    
                 );
                 $y = 1;

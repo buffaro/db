@@ -69,8 +69,6 @@
                     , "Electrode"
                     , "NIBP Arm Cuff"
                     , "NIBP Tubing"
-                    , "SpO2 Sensor"
-                    , "Temperature Sensor"
                     , "Monitor Display"
                     , "Recorder"
                     , "Paper"
@@ -101,12 +99,10 @@
                     , "Speed Tracing 50 mm/sec"
                     , "Frequency Response"
                     , "Filter 50 Hz."
-                    , "Blood Pressure (Normal)"
-                    , "Blood Pressure (High)"
-                    , "Blood Pressure (Low)"
                     , "Temperature"
                     , "Respiration Rate"
                     , "Alarm"
+                    , "Battery"
                    
                 );
                 $y = 1;

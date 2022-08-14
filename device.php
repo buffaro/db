@@ -45,37 +45,58 @@
     if ($row = mysqli_fetch_array($result)) {
         if ($row['Name'] == "Bedside Monitor" || $row['Name'] == "Vital Signs Monitor" || $row['Name'] == "Monitor(MRI)" || $row['Name'] == "Monitor CT") {
             $cal_selector = "bsm";
+            $pm_selector = "bsm";
         } elseif ($row['Name'] == "Digital Blood Pressure" || $row['Name'] == "Ambulatory Blood Pressure Monitoring(บันทึกความดัน)") {
             $cal_selector = "nibp";
+            $pm_selector = "nibp";
         } elseif ($row['Name'] == "Ankle brachial index(เครื่องตรวจสมรรถภาพหลอดเลือดแดง)") {
             $cal_selector = "cavi";
+            $pm_selector = "cavi";
         } elseif ($row['Name'] == "Pulse Oximeter") {
             $cal_selector = "po";
+            $pm_selector = "po";
         } elseif ($row['Name'] == "Electrocardiograph" || $row['Name'] == "Holter Recorder(บันทึกคลื่นไฟฟ้าหัวใจ)") {
             $cal_selector = "ecg";
+            $pm_selector = "ecg";
         } elseif (
             $row['Name'] == "Blood warmer(เครื่องอุ่นสารให้เลือด)" || $row['Name'] == "Hypo / Hyperthermia" || $row['Name'] == "อ่างแช่พาราฟิน (Parafin Bath)"
-            || $row['Name'] == "Cloth warmer(เครื่องอุ่นผ้า)" || $row['Name'] == "Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)"
+            || $row['Name'] == "Cloth warmer(เครื่องอุ่นผ้า)" || $row['Name'] == "Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)" || $row['Name'] == "Forced air Warming Blankets"
         ) {
             $cal_selector = "temp";
+            $pm_selector = "temp";
         } elseif ($row['Name'] == "Infant Incubator(ตู้อบเด็กทารก)" || $row['Name'] == "Infant Warmer (ช่วยเด็กแรกเกิด)" || $row['Name'] == "Radiant warmer(ให้ความอบอุ่นเด็กด้วยแสง)") {
             $cal_selector = "infant_incu";
+            $pm_selector = "infant_incu";
         } elseif ($row['Name'] == "Centrifuge") {
             $cal_selector = "cen";
+            $pm_selector = "cen";
         } elseif ($row['Name'] == "Fetal Doppler" || $row['Name'] == "Fetal Monitor(เครื่องฟังเสียงหัวใจเด็ก)") {
             $cal_selector = "fetal";
+            $pm_selector = "fetal";
         } elseif ($row['Name'] == "Electrosurgical Unit (ตัดจี้ด้วยไฟฟ้า)") {
             $cal_selector = "esu";
+            $pm_selector = "esu";
         } elseif ($row['Name'] == "Sphygmomanometer" || $row['Name'] == "Neopuff" || $row['Name'] == "Aspirators" || $row['Name'] == "Pressure Cuff" || $row['Name'] == "Vacuum Extractor (เครื่องช่วยคลอดโดยใช้แรงดูด)") {
             $cal_selector = "pressure";
+            $pm_selector = "pressure";
         } elseif ($row['Name'] == "Spiro meter") {
             $cal_selector = "spiro";
+            $pm_selector = "spiro";
         } elseif ($row['Name'] == "Traction (ชุดดึงคอและหลังอัตโนมัติ)") {
             $cal_selector = "traction";
+            $pm_selector = "traction";
         } elseif ($row['Name'] == "PaceMaker (เครื่องกระตุ้นหัวใจ)") {
             $cal_selector = "pace";
+            $pm_selector = "pace";
+        } elseif ($row['Name'] == "Laser") {
+            $cal_selector = "laser";
+            $pm_selector = "laser";
+        } elseif ($row['Name'] == "Microware Diathermy") {
+            $cal_selector = "microwave";
+            $pm_selector = "microwave";
         } else {
             $cal_selector = "error";
+            $pm_selector = "error";
         }
 
     ?>
@@ -207,7 +228,7 @@
                     <button type="button" class="btn btn-success col-4" onclick="window.open('cal_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
                         <h2>CAL</h2> [ ล่าสุด: <?php echo $row['Caldate']; ?> ]
                     </button>
-                    <button type="button" class="btn btn-primary col-4" onclick="window.open('pm_'+'<?php echo $cal_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
+                    <button type="button" class="btn btn-primary col-4" onclick="window.open('pm_'+'<?php echo $pm_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
                         <h2>PM</h2> [ ล่าสุด: <?php echo $row['PMdate']; ?> ]
                     </button>
                     <button type="submit" class="btn btn-outline-warning col-4"><h4>Update</h4></button>
