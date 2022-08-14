@@ -19,15 +19,18 @@
   <style>
     .header {
       position: sticky;
-      top: 0;
+      top: 0px;
     }
   </style>
   <div class="row g-0">
-    <div class="col-10">
-      <input id="inSearch" value="" class="form-control" placeholder="Enter Code or SN">
+    <div class="col-8">
+      <input id="inSearch" value="" class="form-control" placeholder="Enter Code or Ref">
     </div>
     <div class="col-2">
-      <button id="btnSearch" onclick="goSearch()" class="btn btn-dark w-100">ค้นหา</button>
+      <button type='button' id="btnSearch" onclick="goSearch()" class="btn btn-dark w-100"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </div>
+    <div class="col-2">
+      <button type='button' id="btnAdd" class='btn btn-success w-100'><i class="fa fa-plus" aria-hidden="true"></i></button>
     </div>
   </div>
 
@@ -72,13 +75,13 @@
   $result = mysqli_query($conn, $sql);
 
   echo "<table class='table table-striped table-dark'>
-<tr href='#' class='header'>
-<th>Code</th>
-<th>Name</th>
-<th>Brand</th>
-<th>Model</th>
-<th>Ref</th>
-</tr>";
+            <tr href='#' class='header'>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Ref</th>
+            </tr>";
   while ($row = mysqli_fetch_array($result)) {
     echo "<tr href='device.php?id=" . $row['Code'] . "'>";
     echo "<td>" . $row['Code'] . "</td>";

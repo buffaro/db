@@ -46,7 +46,7 @@
         $S_Cen4_Cal = avg($S_Cen4_Raw);
         //----------------------------Timer--------------------------------
         $S_Time1_Raw= $_REQUEST['Timer1_5'] . ',' . $_REQUEST['Timer2_5'] . ',' . $_REQUEST['Timer3_5'];
-        $S_Time2_Raw = $_REQUEST['Timer2_10'] . ',' . $_REQUEST['Timer2_10'] . ',' . $_REQUEST['Timer2_10'];
+        $S_Time2_Raw = $_REQUEST['Timer1_10'] . ',' . $_REQUEST['Timer2_10'] . ',' . $_REQUEST['Timer3_10'];
 
         $S_Time1_Cal = avg($S_Time1_Raw);
         $S_Time2_Cal = avg($S_Time2_Raw);

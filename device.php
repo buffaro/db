@@ -45,6 +45,8 @@
             $cal_selector = "infant_incu";
         } elseif ($row['Name'] == "Centrifuge") {
             $cal_selector = "cen";
+        } elseif ($row['Name'] == "Fetal Doppler" || $row['Name'] == "Fetal Monitor(เครื่องฟังเสียงหัวใจเด็ก)") {
+            $cal_selector = "fetal";
         } else {
             $cal_selector = "error";
         }
