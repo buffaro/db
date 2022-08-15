@@ -100,6 +100,12 @@
         } elseif ($row['Name'] == "Treadmill(ลู่วิ่งไฟฟ้า)") {
             $cal_selector = "tread";
             $pm_selector = "tread";
+        } elseif ($row['Name'] == "Infant Ventilator") {
+            $cal_selector = "infant_ven";
+            $pm_selector = "ven";
+        } elseif ($row['Name'] == "Ventilator") {
+            $cal_selector = "error";
+            $pm_selector = "ven";
         } else {
             $cal_selector = "error";
             $pm_selector = "error";
@@ -143,7 +149,7 @@
                         <option value="Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)">Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)</option>
                         <option value="Hypo / Hyperthermia">Hypo / Hyperthermia</option>
                         <option value="Infant Incubator(ตู้อบเด็กทารก)">Infant Incubator(ตู้อบเด็กทารก)</option>
-                        <option value="Infant Vantilator">Infant Vantilator</option>
+                        <option value="Infant Ventilator">Infant Ventilator</option>
                         <option value="Infant Warmer (ช่วยเด็กแรกเกิด)">Infant Warmer (ช่วยเด็กแรกเกิด)</option>
                         <option value="Interferential Therapy(รักษาด้วยคลื่นความถี่กระแสไฟฟ้า)">Interferential Therapy(รักษาด้วยคลื่นความถี่กระแสไฟฟ้า)</option>
                         <option value="Laser">Laser</option>

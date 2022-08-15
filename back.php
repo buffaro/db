@@ -1,4 +1,3 @@
-'$PM_P_Checked1','$PM_P_Checked2','$PM_P_Checked3','$PM_P_Checked4','$PM_P_Checked5','$PM_P_Checked6','$PM_P_Checked7','$PM_P_Checked8','$PM_P_Checked9','$PM_P_Checked10',
-            '$PM_P_Checked11','$PM_P_Checked12','$PM_P_Checked13','$PM_P_Checked14','$PM_P_Checked15','$PM_P_Checked16','$PM_P_Checked17','$PM_P_Checked18','$PM_P_Checked19','$PM_P_Checked20',
-            '$PM_P_Checked21','$PM_P_Checked22','$PM_P_Checked23','$PM_P_Checked24','$PM_P_Checked25','$PM_P_Checked26','$PM_P_Checked27','$PM_P_Checked28','$PM_P_Checked29','$PM_P_Checked30',
-            '$PM_P_Checked31','$PM_P_Checked32','$PM_P_Checked33','$PM_P_Checked34','$PM_P_Checked35','$PM_P_Checked36','$PM_P_Checked37','$PM_P_Checked38','$PM_P_Checked39','$PM_P_Checked40'
+'$A_UUT1_Cal','$A_Mas1_Cal','$A_UUT2_Cal','$A_Mas2_Cal','$A_UUT3_Cal','$A_Mas3_Cal','$A_UUT4_Cal','$A_Mas4_Cal',
+            '$B_UUT1_Cal','$B_Mas1_Cal','$B_UUT2_Cal','$B_Mas2_Cal','$B_UUT3_Cal','$B_Mas3_Cal','$B_UUT4_Cal','$B_Mas4_Cal',
+            '$C_UUT1_Cal','$C_Mas1_Cal','$C_UUT2_Cal','$C_Mas2_Cal','$C_UUT3_Cal','$C_Mas3_Cal','$C_UUT4_Cal','$C_Mas4_Cal'
