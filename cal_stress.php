@@ -47,7 +47,7 @@
 
         <form action="insert_data_stress.php" method="post">
             <div class="container">
-                <h2>Cal Data : <span style="color:blueviolet">Bedside Monitor</span></h2>
+                <h2>Cal Data : <span style="color:blueviolet">Exercise Stress Test</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
                 <label for="hos_code" class="form-label">Room Condition</label>
                 <!-- Room Condition -->

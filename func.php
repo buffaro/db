@@ -10,7 +10,7 @@ function avg($raw) {
     }else{
         $c = 3;
     }
-    return number_format((float)array_sum(explode(",", $raw)) / $c, 2, '.', '');
+    return number_format((float)array_sum(explode(",", $raw)) / $c, 3, '.', '');
   }
 ?>
 

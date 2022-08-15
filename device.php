@@ -97,6 +97,9 @@
         } elseif ($row['Name'] == "Exercise Stress Test") {
             $cal_selector = "stress";
             $pm_selector = "stress";
+        } elseif ($row['Name'] == "Treadmill(ลู่วิ่งไฟฟ้า)") {
+            $cal_selector = "tread";
+            $pm_selector = "tread";
         } else {
             $cal_selector = "error";
             $pm_selector = "error";
