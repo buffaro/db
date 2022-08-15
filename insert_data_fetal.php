@@ -25,9 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
-
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------ECG--------------------------------
         $S1_HR1_Raw = $_REQUEST['ecgr11_60'] . ',' . $_REQUEST['ecgr21_60'] . ',' . $_REQUEST['ecgr31_60'];
         $S1_HR2_Raw = $_REQUEST['ecgr11_90'] . ',' . $_REQUEST['ecgr21_90'] . ',' . $_REQUEST['ecgr31_90'];
@@ -60,13 +60,13 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_fetal (
-            Code,
+            Code,Room_T,Room_H,
             S1_HR1_Raw,S1_HR2_Raw,S1_HR3_Raw,S1_HR4_Raw,S1_HR5_Raw,S1_HR6_Raw,
             S1_HR1_Cal,S1_HR2_Cal,S1_HR3_Cal,S1_HR4_Cal,S1_HR5_Cal,S1_HR6_Cal,
             S2_HR1_Raw,S2_HR2_Raw,S2_HR3_Raw,S2_HR4_Raw,S2_HR5_Raw,S2_HR6_Raw,
             S2_HR1_Cal,S2_HR2_Cal,S2_HR3_Cal,S2_HR4_Cal,S2_HR5_Cal,S2_HR6_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$S1_HR1_Raw','$S1_HR2_Raw','$S1_HR3_Raw','$S1_HR4_Raw','$S1_HR4_Raw','$S1_HR5_Raw',
             '$S1_HR1_Cal','$S1_HR2_Cal','$S1_HR3_Cal','$S1_HR4_Cal','$S1_HR4_Cal','$S1_HR5_Cal',
             '$S2_HR1_Raw','$S2_HR2_Raw','$S2_HR3_Raw','$S2_HR4_Raw','$S2_HR4_Raw','$S2_HR5_Raw',
@@ -76,8 +76,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

@@ -2,6 +2,8 @@ CREATE TABLE cal_temp(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Temperature
     ,S1 FLOAT(10)
     ,S2 FLOAT(10)

@@ -25,9 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
-
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------Speed--------------------------------
         $S_Cen1 = $_REQUEST['Spds1'];
         $S_Cen2 = $_REQUEST['Spds2'];
@@ -53,14 +53,14 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_cen (
-            Code,
+            Code,Room_T,Room_H,
             S_Cen1,S_Cen2,S_Cen3,S_Cen4,
             S_Cen1_Raw,S_Cen2_Raw,S_Cen3_Raw,S_Cen4_Raw,
             S_Cen1_Cal,S_Cen2_Cal,S_Cen3_Cal,S_Cen4_Cal,
             S_Time1_Raw,S_Time2_Raw,
             S_Time1_Cal,S_Time2_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$S_Cen1','$S_Cen2','$S_Cen3','$S_Cen4',
             '$S_Cen1_Raw','$S_Cen2_Raw','$S_Cen3_Raw','$S_Cen4_Raw',
             '$S_Cen1_Cal','$S_Cen2_Cal','$S_Cen3_Cal','$S_Cen4_Cal',
@@ -72,8 +72,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

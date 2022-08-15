@@ -48,8 +48,8 @@
             ";
 
         if (mysqli_query($conn, $sql)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=device.php?id='.$Code);
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

@@ -1,9 +1,38 @@
-CREATE TABLE cal_bsm(
+CREATE TABLE cal_stress(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
     ,Room_T FLOAT(4)
     ,Room_H FLOAT(4)
+-- Speed
+    ,S_Speed1 INTEGER(5)
+    ,S_Speed2 INTEGER(5)
+    ,S_Speed3 INTEGER(5)
+    ,S_Speed4 INTEGER(5)
+    ,S_Speed5 INTEGER(5)
+    ,S_Speed1_Raw VARCHAR(50)
+    ,S_Speed2_Raw VARCHAR(50)
+    ,S_Speed3_Raw VARCHAR(50)
+    ,S_Speed4_Raw VARCHAR(50)
+    ,S_Speed5_Raw VARCHAR(50)
+    ,S_Speed1_Cal FLOAT(10)
+    ,S_Speed2_Cal FLOAT(10)
+    ,S_Speed3_Cal FLOAT(10)
+    ,S_Speed4_Cal FLOAT(10)
+    ,S_Speed5_Cal FLOAT(10)
+-- ECG
+    ,S_HR1 INTEGER(3) DEFAULT '60'
+    ,S_HR2 INTEGER(3) DEFAULT '90'
+    ,S_HR3 INTEGER(3) DEFAULT '120'
+    ,S_HR4 INTEGER(3) DEFAULT '180'
+    ,S_HR1_Raw VARCHAR(50)
+    ,S_HR2_Raw VARCHAR(50)
+    ,S_HR3_Raw VARCHAR(50)
+    ,S_HR4_Raw VARCHAR(50)
+    ,S_HR1_Cal FLOAT(10)
+    ,S_HR2_Cal FLOAT(10)
+    ,S_HR3_Cal FLOAT(10)
+    ,S_HR4_Cal FLOAT(10)
 -- NIBP
     ,S_ES VARCHAR(3) DEFAULT '0'
     ,SL_Sys INTEGER(3) DEFAULT '120'
@@ -42,36 +71,4 @@ CREATE TABLE cal_bsm(
     ,SH_Mean_Cal FLOAT(10)
     ,SH_Dia_Cal FLOAT(10)
     ,SH_PR_Cal FLOAT(10)
--- ECG
-    ,S_HR1 INTEGER(3) DEFAULT '60'
-    ,S_HR2 INTEGER(3) DEFAULT '90'
-    ,S_HR3 INTEGER(3) DEFAULT '120'
-    ,S_HR1_Raw VARCHAR(50)
-    ,S_HR2_Raw VARCHAR(50)
-    ,S_HR3_Raw VARCHAR(50)
-    ,S_HR1_Cal FLOAT(10)
-    ,S_HR2_Cal FLOAT(10)
-    ,S_HR3_Cal FLOAT(10)
--- Pulse Oximeter
-    ,S_Sensor VARCHAR(20) DEFAULT 'Nellcor'
-    ,S_PO1 INTEGER(3) DEFAULT '90'
-    ,S_PO2 INTEGER(3) DEFAULT '94'
-    ,S_PO3 INTEGER(3) DEFAULT '98'
-    ,S_PO1_Raw VARCHAR(50)
-    ,S_PO2_Raw VARCHAR(50)
-    ,S_PO3_Raw VARCHAR(50)
-    ,S_PO1_Cal FLOAT(10)
-    ,S_PO2_Cal FLOAT(10)
-    ,S_PO3_Cal FLOAT(10)
--- Respiration
-    ,S_Lead VARCHAR(2) DEFAULT 'LL'
-    ,S_Res1 INTEGER(3) DEFAULT '20'
-    ,S_Res2 INTEGER(3) DEFAULT '30'
-    ,S_Res3 INTEGER(3) DEFAULT '40'
-    ,S_Res1_Raw VARCHAR(50)
-    ,S_Res2_Raw VARCHAR(50)
-    ,S_Res3_Raw VARCHAR(50)
-    ,S_Res1_Cal FLOAT(10)
-    ,S_Res2_Cal FLOAT(10)
-    ,S_Res3_Cal FLOAT(10)
 );

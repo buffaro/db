@@ -2,6 +2,8 @@ CREATE TABLE cal_traction(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Force
     ,S_Force1 INTEGER(3) DEFAULT '10'
     ,S_Force2 INTEGER(3) DEFAULT '20'

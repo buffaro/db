@@ -49,6 +49,28 @@
             <div class="container">
                 <h2>Cal Data : <span style="color:blueviolet">Pulse Oximeter</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
+                <!-- Room Condition -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Temperature</span>
+                    <input type="number" step="0.01" name="Room_T" class="form-control" value="">
+                    <span class="input-group-text col-3">Humidity</span>
+                    <input type="number" step="0.01" name="Room_H" class="form-control" value="">
+                </div>
+                <label for="Setting" class="form-label">Setting</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">SpO2 Sensor</span>
+                    <select name="PO_Sensor" class="form-select" aria-label="">
+                        <option selected>Nellcor</option>
+                        <option value="GE/Ohmeda">GE/Ohmeda</option>
+                        <option value="Nonin">Nonin</option>
+                        <option value="Masimo">Masimo</option>
+                        <option value="Nihon Kohden">Nihon Kohden</option>
+                        <option value="Philips">Philips</option>
+                        <option value="Mindray">Mindray</option>
+                        <option value="Other">Other</option>
+                        <option value="None">None</option>
+                    </select>
+                </div>
                 <!-- ECG -->
                 <label for="hos_code" class="form-label">ECG</label>
                 <div class="input-group mb-3">

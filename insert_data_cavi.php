@@ -25,9 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
-
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------NIBP--------------------------------
         $RA_Sys_Raw = $_REQUEST['rar1_sys'] . ',' . $_REQUEST['rar2_sys'] . ',' . $_REQUEST['rar3_sys'];
         $RA_Mean_Raw = $_REQUEST['rar1_mean'] . ',' . $_REQUEST['rar2_mean'] . ',' . $_REQUEST['rar3_mean'];
@@ -79,7 +79,7 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_cavi (
-            Code,
+            Code,Room_T,Room_H,
             RA_Sys_Raw,RA_Mean_Raw,RA_Dia_Raw,RA_PR_Raw,
             LA_Sys_Raw,LA_Mean_Raw,LA_Dia_Raw,LA_PR_Raw,
             RB_Sys_Raw,RB_Mean_Raw,RB_Dia_Raw,RB_PR_Raw,
@@ -91,7 +91,7 @@
             S_HR1_Raw,S_HR2_Raw,S_HR3_Raw,
             S_HR1_Cal,S_HR2_Cal,S_HR3_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$RA_Sys_Raw','$RA_Mean_Raw','$RA_Dia_Raw','$RA_PR_Raw',
             '$LA_Sys_Raw','$LA_Mean_Raw','$LA_Dia_Raw','$LA_PR_Raw',
             '$RB_Sys_Raw','$RB_Mean_Raw','$RB_Dia_Raw','$RB_PR_Raw',
@@ -107,8 +107,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

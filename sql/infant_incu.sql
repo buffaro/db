@@ -2,6 +2,9 @@ CREATE TABLE cal_infant_incu(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
+-- Temp
     ,AirT FLOAT(10)
     ,SkinT FLOAT(10)
     ,S_UUT1_Raw VARCHAR(50)

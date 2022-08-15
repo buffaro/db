@@ -25,9 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
-
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------Force--------------------------------
         $S_Force1_Raw = $_REQUEST['force_r1_1'] . ',' . $_REQUEST['force_r2_1'] . ',' . $_REQUEST['force_r3_1'];
         $S_Force2_Raw = $_REQUEST['force_r1_2'] . ',' . $_REQUEST['force_r2_2'] . ',' . $_REQUEST['force_r3_2'];
@@ -72,7 +72,7 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_traction (
-            Code,
+            Code,Room_T,Room_H,
             S_Force1_Raw,S_Force2_Raw,S_Force3_Raw,S_Force4_Raw,
             S_Force1_Cal,S_Force2_Cal,S_Force3_Cal,S_Force4_Cal,
             S_Rest1_Raw,S_Rest2_Raw,S_Rest3_Raw,S_Rest4_Raw,
@@ -82,7 +82,7 @@
             T_Rest1_Raw,T_Rest2_Raw,T_Rest3_Raw,T_Rest4_Raw,
             T_Rest1_Cal,T_Rest2_Cal,T_Rest3_Cal,T_Rest4_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$S_Force1_Raw','$S_Force2_Raw','$S_Force3_Raw','$S_Force4_Raw',
             '$S_Force1_Cal','$S_Force2_Cal','$S_Force3_Cal','$S_Force4_Cal',
             '$S_Rest1_Raw','$S_Rest2_Raw','$S_Rest3_Raw','$S_Rest4_Raw',
@@ -96,8 +96,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

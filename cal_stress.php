@@ -45,16 +45,81 @@
     if ($row = mysqli_fetch_array($result)) {
     ?>
 
-        <form action="insert_data_nibp.php" method="post">
+        <form action="insert_data_stress.php" method="post">
             <div class="container">
-                <h2>Cal Data : <span style="color:blueviolet">NIBP</span></h2>
+                <h2>Cal Data : <span style="color:blueviolet">Bedside Monitor</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
+                <label for="hos_code" class="form-label">Room Condition</label>
                 <!-- Room Condition -->
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Temperature</span>
                     <input type="number" step="0.01" name="Room_T" class="form-control" value="">
                     <span class="input-group-text col-3">Humidity</span>
                     <input type="number" step="0.01" name="Room_H" class="form-control" value="">
+                </div>
+                <!-- Speed -->
+                <label for="hos_code" class="form-label">Belt Speed (mph)</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Set</span>
+                    <input type="number" step="0.001" name="Spds1" class="form-control" value="1" placeholder="Set Value">
+                    <input type="number" step="0.001" name="Spds2" class="form-control" value="2" placeholder="Set Value">
+                    <input type="number" step="0.001" name="Spds3" class="form-control" value="3" placeholder="Set Value">
+                    <input type="number" step="0.001" name="Spds4" class="form-control" value="4" placeholder="Set Value">
+                    <input type="number" step="0.001" name="Spds5" class="form-control" value="5" placeholder="Set Value">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 1</span>
+                    <input type="number" step="0.001" name="Spdr1_1" class="form-control">
+                    <input type="number" step="0.001" name="Spdr1_2" class="form-control">
+                    <input type="number" step="0.001" name="Spdr1_3" class="form-control">
+                    <input type="number" step="0.001" name="Spdr1_4" class="form-control">
+                    <input type="number" step="0.001" name="Spdr1_5" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 2</span>
+                    <input type="number" step="0.001" name="Spdr2_1" class="form-control">
+                    <input type="number" step="0.001" name="Spdr2_2" class="form-control">
+                    <input type="number" step="0.001" name="Spdr2_3" class="form-control">
+                    <input type="number" step="0.001" name="Spdr2_4" class="form-control">
+                    <input type="number" step="0.001" name="Spdr2_5" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 3</span>
+                    <input type="number" step="0.001" name="Spdr3_1" class="form-control">
+                    <input type="number" step="0.001" name="Spdr3_2" class="form-control">
+                    <input type="number" step="0.001" name="Spdr3_3" class="form-control">
+                    <input type="number" step="0.001" name="Spdr3_4" class="form-control">
+                    <input type="number" step="0.001" name="Spdr3_5" class="form-control">
+                </div>
+                <!-- ECG -->
+                <label for="hos_code" class="form-label">ECG</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Set</span>
+                    <input type="number" step="0.01" name="ecgs_60" class="form-control" value="60" disabled>
+                    <input type="number" step="0.01" name="ecgs_90" class="form-control" value="90" disabled>
+                    <input type="number" step="0.01" name="ecgs_120" class="form-control" value="120" disabled>
+                    <input type="number" step="0.01" name="ecgs_180" class="form-control" value="180" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 1</span>
+                    <input type="number" step="0.01" name="ecgr1_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr1_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr1_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr1_180" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 2</span>
+                    <input type="number" step="0.01" name="ecgr2_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr2_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr2_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr2_180" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 3</span>
+                    <input type="number" step="0.01" name="ecgr3_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr3_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr3_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr3_180" class="form-control">
                 </div>
                 <!-- Normal -->
                 <label for="Setting" class="form-label">Setting</label>

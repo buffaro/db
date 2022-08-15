@@ -26,6 +26,10 @@
         }
         //---------------------
         $hosp_code = $_REQUEST['hosp_code'];
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
+        //----------------------------Setting--------------------------------
+        $S_Sensor = $_REQUEST['PO_Sensor'];
         //----------------------------ECG--------------------------------
         $S_HR1_Raw = $_REQUEST['ecgr1_60'] . ',' . $_REQUEST['ecgr2_60'] . ',' . $_REQUEST['ecgr3_60'];
         $S_HR2_Raw = $_REQUEST['ecgr1_90'] . ',' . $_REQUEST['ecgr2_90'] . ',' . $_REQUEST['ecgr3_90'];
@@ -42,13 +46,13 @@
         $S_PO3_Cal = avg($S_PO3_Raw);
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_po (
-            Code,
+            Code,S_Sensor,Room_T,Room_H,
             S_HR1_Raw,S_HR2_Raw,S_HR3_Raw,
             S_HR1_Cal,S_HR2_Cal,S_HR3_Cal,
             S_PO1_Raw,S_PO2_Raw,S_PO3_Raw,
             S_PO1_Cal,S_PO2_Cal,S_PO3_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$S_Sensor','$Room_T','$Room_H',
             '$S_HR1_Raw','$S_HR2_Raw','$S_HR3_Raw',
             '$S_HR1_Cal','$S_HR2_Cal','$S_HR3_Cal',
             '$S_PO1_Raw','$S_PO2_Raw','$S_PO3_Raw',
@@ -58,8 +62,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

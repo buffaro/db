@@ -67,4 +67,6 @@ CREATE TABLE pm_checked(
     ,PM_P_Checked28 VARCHAR(20)
     ,PM_P_Checked29 VARCHAR(20)
     ,PM_P_Checked30 VARCHAR(20)
+
+    ,Comments VARCHAR(200)
 );

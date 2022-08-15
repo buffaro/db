@@ -49,7 +49,13 @@
             <div class="container">
                 <h2>Cal Data : <span style="color:blueviolet">Pressure Device</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
-
+                <!-- Room Condition -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Temperature</span>
+                    <input type="number" step="0.01" name="Room_T" class="form-control" value="">
+                    <span class="input-group-text col-3">Humidity</span>
+                    <input type="number" step="0.01" name="Room_H" class="form-control" value="">
+                </div>
                 <!-- Pressure -->
                 <label for="hos_code" class="form-label">Pressure</label>
                 <div class="input-group mb-3">

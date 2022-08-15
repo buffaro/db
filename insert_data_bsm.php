@@ -25,9 +25,12 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
-
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
+        //----------------------------Setting--------------------------------
+        $S_ES = $_REQUEST['ES'];
+        $S_Sensor = $_REQUEST['PO_Sensor'];
         //----------------------------NIBP--------------------------------
         $SM_Sys_Raw = $_REQUEST['nmr1_sys'] . ',' . $_REQUEST['nmr2_sys'] . ',' . $_REQUEST['nmr3_sys'];
         $SM_Mean_Raw = $_REQUEST['nmr1_mean'] . ',' . $_REQUEST['nmr2_mean'] . ',' . $_REQUEST['nmr3_mean'];
@@ -85,7 +88,7 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_bsm (
-            Code,
+            Code,S_ES,S_Sensor,Room_T,Room_H,
             SM_Sys_Raw,SM_Mean_Raw,SM_Dia_Raw,SM_PR_Raw,
             SH_Sys_Raw,SH_Mean_Raw,SH_Dia_Raw,SH_PR_Raw,
             SL_Sys_Raw,SL_Mean_Raw,SL_Dia_Raw,SL_PR_Raw,
@@ -99,7 +102,7 @@
             S_Res1_Raw,S_Res2_Raw,S_Res3_Raw,
             S_Res1_Cal,S_Res2_Cal,S_Res3_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$S_ES','$S_Sensor','$Room_T','$Room_H',
             '$SM_Sys_Raw','$SM_Mean_Raw','$SM_Dia_Raw','$SM_PR_Raw',
             '$SH_Sys_Raw','$SH_Mean_Raw','$SH_Dia_Raw','$SH_PR_Raw',
             '$SL_Sys_Raw','$SL_Mean_Raw','$SL_Dia_Raw','$SL_PR_Raw',
@@ -117,8 +120,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

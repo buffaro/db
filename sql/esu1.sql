@@ -2,6 +2,8 @@ CREATE TABLE cal_esu1(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Monopolar
 -- LOW CUT
     ,M_Cut1_Name VARCHAR(50)

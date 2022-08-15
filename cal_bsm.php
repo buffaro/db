@@ -49,8 +49,55 @@
             <div class="container">
                 <h2>Cal Data : <span style="color:blueviolet">Bedside Monitor</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
-                
+                <label for="hos_code" class="form-label">Room Condition</label>
+                <!-- Room Condition -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Temperature</span>
+                    <input type="number" step="0.01" name="Room_T" class="form-control" value="">
+                    <span class="input-group-text col-3">Humidity</span>
+                    <input type="number" step="0.01" name="Room_H" class="form-control" value="">
+                </div>
                 <!-- Normal -->
+                <label for="Setting" class="form-label">Setting</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Envelope Shift</span>
+                    <select name="ES" class="form-select" aria-label="">
+                        <option selected>0</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                        <option value="-1">-1</option>
+                        <option value="-2">-2</option>
+                        <option value="-3">-3</option>
+                        <option value="-4">-4</option>
+                        <option value="-5">-5</option>
+                        <option value="-6">-6</option>
+                        <option value="-7">-7</option>
+                        <option value="-8">-8</option>
+                        <option value="-9">-9</option>
+                        <option value="-10">-10</option>
+                    </select>
+                    <span class="input-group-text col-3">SpO2 Sensor</span>
+                    <select name="PO_Sensor" class="form-select" aria-label="">
+                        <option selected>Nellcor</option>
+                        <option value="GE/Ohmeda">GE/Ohmeda</option>
+                        <option value="Nonin">Nonin</option>
+                        <option value="Masimo">Masimo</option>
+                        <option value="Nihon Kohden">Nihon Kohden</option>
+                        <option value="Philips">Philips</option>
+                        <option value="Mindray">Mindray</option>
+                        <option value="Other">Other</option>
+                        <option value="None">None</option>
+                    </select>
+                </div>
                 <label for="hos_code" class="form-label">Normal</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Set</span>

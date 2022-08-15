@@ -2,7 +2,8 @@ CREATE TABLE cal_pace(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
-
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Load
     ,PC_Load INTEGER(4) DEFAULT '400'
 -- CH1

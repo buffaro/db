@@ -2,6 +2,8 @@ CREATE TABLE cal_spiro(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Volume
     ,Vol_Unit VARCHAR(50) DEFAULT 'liter'
     ,Vol1 INTEGER(3) DEFAULT '1'

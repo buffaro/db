@@ -2,6 +2,8 @@ CREATE TABLE cal_fetal(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Heart Rate
 -- CH1
     ,S1_HR1 INTEGER(3) DEFAULT '60'

@@ -25,8 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------Volume Unit-----------------------------------
         $Vol_Unit = $_REQUEST['Vol_Unit'];
         //-----------------------------Volume------------------------------------
@@ -67,12 +68,12 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_spiro (
-            Code,
+            Code,Room_T,Room_H,
             Vol_Unit,
             Vol1_Raw,Vol2_Raw,Vol3_Raw,Vol4_Raw,Vol5_Raw,Vol6_Raw,Vol7_Raw,Vol8_Raw,Vol9_Raw,Vol10_Raw,
             Vol1_Cal,Vol2_Cal,Vol3_Cal,Vol4_Cal,Vol5_Cal,Vol6_Cal,Vol7_Cal,Vol8_Cal,Vol9_Cal,Vol10_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$Vol_Unit',
             '$Vol1_Raw','$Vol2_Raw','$Vol3_Raw','$Vol4_Raw','$Vol5_Raw','$Vol6_Raw','$Vol7_Raw','$Vol8_Raw','$Vol9_Raw','$Vol10_Raw',
             '$Vol1_Cal','$Vol2_Cal','$Vol3_Cal','$Vol4_Cal','$Vol5_Cal','$Vol6_Cal','$Vol7_Cal','$Vol8_Cal','$Vol9_Cal','$Vol10_Cal'
@@ -81,8 +82,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

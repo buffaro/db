@@ -49,6 +49,14 @@
             <div class="container">
                 <h2>Cal Data : <span style="color:blueviolet">Fetal Monitor / Doppler</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
+                <!-- Room Condition -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Temperature</span>
+                    <input type="number" step="0.01" name="Room_T" class="form-control" value="">
+                    <span class="input-group-text col-3">Humidity</span>
+                    <input type="number" step="0.01" name="Room_H" class="form-control" value="">
+                </div>
+                <!-- Load -->
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Load (Ohms)</span>
                     <input type="number" name="PC_Load" class="form-control" value="400">

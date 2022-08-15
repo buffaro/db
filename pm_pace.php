@@ -52,9 +52,9 @@
                 <label for="hos_code" class="form-label">Electric Safety Test</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Ground (Ω)</span>
-                    <input type="number" step="0.001" name="LKG" class="form-control" value="">
+                    <input type="number" step="0.001" name="GROUND" class="form-control" value="">
                     <span class="input-group-text col-3">LKG (µA)</span>
-                    <input type="number" step="0.01" name="GROUND" class="form-control" value="">
+                    <input type="number" step="0.01" name="LKG" class="form-control" value="">
                 </div>
                 <!-- Check -->
                 <label for="hos_code" class="form-label">Visual Check</label>
@@ -109,7 +109,8 @@
                     $y += 1;
                 }
                 ?>
-
+                <label for="Comments" class="form-label">Comments</label>
+                <input type="text" class="form-control" name="Comments">
 
                 <!-- Button -->
                 <div class="d-flex justify-content-between">

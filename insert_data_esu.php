@@ -25,9 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
-
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------MONO CUT 1--------------------------------
         $M_Cut1_Name = $_REQUEST['Ms_Cut1_Name'];
         $M_Cut1_Load = $_REQUEST['Ms_Cut1_Load'];
@@ -298,7 +298,7 @@
 
         //----------------------------SQL--------------------------------
         $sql1 = "INSERT INTO cal_esu1 (
-            Code,
+            Code,Room_T,Room_H,
             M_Cut1_Name,M_Cut1_Load,
             M_Cut1_1,M_Cut1_2,M_Cut1_3,M_Cut1_4,M_Cut1_5,M_Cut1_6,
             M_Cut1_1_Raw,M_Cut1_2_Raw,M_Cut1_3_Raw,M_Cut1_4_Raw,M_Cut1_5_Raw,M_Cut1_6_Raw,
@@ -312,7 +312,7 @@
             M_Cut3_1_Raw,M_Cut3_2_Raw,M_Cut3_3_Raw,M_Cut3_4_Raw,M_Cut3_5_Raw,M_Cut3_6_Raw,
             M_Cut3_1_Cal,M_Cut3_2_Cal,M_Cut3_3_Cal,M_Cut3_4_Cal,M_Cut3_5_Cal,M_Cut3_6_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$M_Cut1_Name','$M_Cut1_Load',
             '$M_Cut1_1','$M_Cut1_2','$M_Cut1_3','$M_Cut1_4','$M_Cut1_5','$M_Cut1_6',
             '$M_Cut1_1_Raw','$M_Cut1_2_Raw','$M_Cut1_3_Raw','$M_Cut1_4_Raw','$M_Cut1_5_Raw','$M_Cut1_6_Raw',
@@ -420,8 +420,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3) && mysqli_query($conn, $sql4) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
             echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);

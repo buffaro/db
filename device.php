@@ -89,11 +89,14 @@
             $cal_selector = "pace";
             $pm_selector = "pace";
         } elseif ($row['Name'] == "Laser") {
-            $cal_selector = "laser";
+            $cal_selector = "error";
             $pm_selector = "laser";
         } elseif ($row['Name'] == "Microware Diathermy") {
-            $cal_selector = "microwave";
+            $cal_selector = "error";
             $pm_selector = "microwave";
+        } elseif ($row['Name'] == "Exercise Stress Test") {
+            $cal_selector = "stress";
+            $pm_selector = "stress";
         } else {
             $cal_selector = "error";
             $pm_selector = "error";

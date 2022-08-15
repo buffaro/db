@@ -29,6 +29,7 @@
 
         $LKG = $_REQUEST['LKG'];
         $GROUND = $_REQUEST['GROUND'];
+        $Comments = $_REQUEST['Comments'];
         //---------------------
         $PM_V_Checked1 = isset($_REQUEST['pm_check__v1']) ? $_REQUEST['pm_check__v1'] : "-";
         $PM_V_Checked2 = isset($_REQUEST['pm_check__v2']) ? $_REQUEST['pm_check__v2'] : "-";
@@ -99,7 +100,7 @@
         
         $sql = "INSERT INTO pm_checked (
             Code,
-            LKG,GROUND,
+            LKG,GROUND,Comments,
             PM_V_Checked1,PM_V_Checked2,PM_V_Checked3,PM_V_Checked4,PM_V_Checked5,PM_V_Checked6,PM_V_Checked7,PM_V_Checked8,PM_V_Checked9,PM_V_Checked10,
             PM_V_Checked11,PM_V_Checked12,PM_V_Checked13,PM_V_Checked14,PM_V_Checked15,PM_V_Checked16,PM_V_Checked17,PM_V_Checked18,PM_V_Checked19,PM_V_Checked20,
             PM_V_Checked21,PM_V_Checked22,PM_V_Checked23,PM_V_Checked24,PM_V_Checked25,PM_V_Checked26,PM_V_Checked27,PM_V_Checked28,PM_V_Checked29,PM_V_Checked30,
@@ -109,7 +110,7 @@
 
             ) VALUES (
             '$hosp_code',
-            '$LKG','$GROUND',
+            '$LKG','$GROUND','$Comments',
             '$PM_V_Checked1','$PM_V_Checked2','$PM_V_Checked3','$PM_V_Checked4','$PM_V_Checked5','$PM_V_Checked6','$PM_V_Checked7','$PM_V_Checked8','$PM_V_Checked9','$PM_V_Checked10',
             '$PM_V_Checked11','$PM_V_Checked12','$PM_V_Checked13','$PM_V_Checked14','$PM_V_Checked15','$PM_V_Checked16','$PM_V_Checked17','$PM_V_Checked18','$PM_V_Checked19','$PM_V_Checked20',
             '$PM_V_Checked21','$PM_V_Checked22','$PM_V_Checked23','$PM_V_Checked24','$PM_V_Checked25','$PM_V_Checked26','$PM_V_Checked27','$PM_V_Checked28','$PM_V_Checked29','$PM_V_Checked30',
@@ -121,8 +122,8 @@
         $PMdate = date("Y-m-d");
         $upPMdate = "UPDATE cpy SET PMdate = '$PMdate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upPMdate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

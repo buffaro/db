@@ -2,6 +2,8 @@ CREATE TABLE cal_cen(
     ID INTEGER(11)  NOT NULL PRIMARY KEY AUTO_INCREMENT
     ,Code VARCHAR(20)
     ,Caldate TIMESTAMP
+    ,Room_T FLOAT(4)
+    ,Room_H FLOAT(4)
 -- Speed
     ,S_Cen1 INTEGER(5)
     ,S_Cen2 INTEGER(5)

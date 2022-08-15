@@ -25,8 +25,9 @@
             die("Connection failed: " . $conn->connect_error);
         }
         //---------------------
-
         $hosp_code = $_REQUEST['hosp_code'];
+        $Room_T = $_REQUEST['Room_T'];
+        $Room_H = $_REQUEST['Room_H'];
         //----------------------------Temp Set-----------------------------------
         $AirT = $_REQUEST['AirT_Set'];
         $SkinT = $_REQUEST['SkinT_Set'];
@@ -68,7 +69,7 @@
 
         //----------------------------SQL--------------------------------
         $sql = "INSERT INTO cal_infant_incu (
-            Code,
+            Code,Room_T,Room_H,
             AirT,SkinT,
             S_UUT1_Raw,S_Mas1_Raw,
             S_UUT1_Cal,S_Mas1_Cal,
@@ -80,7 +81,7 @@
             Suc1_Raw,Suc2_Raw,Suc3_Raw,Suc4_Raw,Suc5_Raw,SucMax_Raw,
             Suc1_Cal,Suc2_Cal,Suc3_Cal,Suc4_Cal,Suc5_Cal,SucMax_Cal
             ) VALUES (
-            '$hosp_code',
+            '$hosp_code','$Room_T','$Room_H',
             '$AirT','$SkinT',
             '$S_UUT1_Raw','$S_Mas1_Raw',
             '$S_UUT1_Cal','$S_Mas1_Cal',
@@ -96,8 +97,8 @@
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {
-            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>";
-            header('refresh: 3; url=list.php');
+            echo "<button type='button' class='btn btn-success'>เพิ่มข้อมูลเรียบร้อยแล้ว</button>
+            <script type='text/javascript'>setTimeout('window.close();', 3000);</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
