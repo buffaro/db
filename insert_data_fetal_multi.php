@@ -28,6 +28,35 @@
         $hosp_code = $_REQUEST['hosp_code'];
         $Room_T = $_REQUEST['Room_T'];
         $Room_H = $_REQUEST['Room_H'];
+        //----------------------------ECG--------------------------------
+        $S1_HR1_Raw = $_REQUEST['ecgr11_60'] . ',' . $_REQUEST['ecgr21_60'] . ',' . $_REQUEST['ecgr31_60'];
+        $S1_HR2_Raw = $_REQUEST['ecgr11_90'] . ',' . $_REQUEST['ecgr21_90'] . ',' . $_REQUEST['ecgr31_90'];
+        $S1_HR3_Raw = $_REQUEST['ecgr11_120'] . ',' . $_REQUEST['ecgr21_120'] . ',' . $_REQUEST['ecgr31_120'];
+        $S1_HR4_Raw = $_REQUEST['ecgr11_150'] . ',' . $_REQUEST['ecgr21_150'] . ',' . $_REQUEST['ecgr31_150'];
+        $S1_HR5_Raw = $_REQUEST['ecgr11_180'] . ',' . $_REQUEST['ecgr21_180'] . ',' . $_REQUEST['ecgr31_180'];
+        $S1_HR6_Raw = $_REQUEST['ecgr11_210'] . ',' . $_REQUEST['ecgr21_210'] . ',' . $_REQUEST['ecgr31_210'];
+
+        $S1_HR1_Cal = avg($S1_HR1_Raw);
+        $S1_HR2_Cal = avg($S1_HR2_Raw);
+        $S1_HR3_Cal = avg($S1_HR3_Raw);
+        $S1_HR4_Cal = avg($S1_HR4_Raw);
+        $S1_HR5_Cal = avg($S1_HR5_Raw);
+        $S1_HR6_Cal = avg($S1_HR6_Raw);
+
+        $S2_HR1_Raw = $_REQUEST['ecgr12_60'] . ',' . $_REQUEST['ecgr22_60'] . ',' . $_REQUEST['ecgr32_60'];
+        $S2_HR2_Raw = $_REQUEST['ecgr12_90'] . ',' . $_REQUEST['ecgr22_90'] . ',' . $_REQUEST['ecgr32_90'];
+        $S2_HR3_Raw = $_REQUEST['ecgr12_120'] . ',' . $_REQUEST['ecgr22_120'] . ',' . $_REQUEST['ecgr32_120'];
+        $S2_HR4_Raw = $_REQUEST['ecgr12_150'] . ',' . $_REQUEST['ecgr22_150'] . ',' . $_REQUEST['ecgr32_150'];
+        $S2_HR5_Raw = $_REQUEST['ecgr12_180'] . ',' . $_REQUEST['ecgr22_180'] . ',' . $_REQUEST['ecgr32_180'];
+        $S2_HR6_Raw = $_REQUEST['ecgr12_210'] . ',' . $_REQUEST['ecgr22_210'] . ',' . $_REQUEST['ecgr32_210'];
+
+        $S2_HR1_Cal = avg($S2_HR1_Raw);
+        $S2_HR2_Cal = avg($S2_HR2_Raw);
+        $S2_HR3_Cal = avg($S2_HR3_Raw);
+        $S2_HR4_Cal = avg($S2_HR4_Raw);
+        $S2_HR5_Cal = avg($S2_HR5_Raw);
+        $S2_HR6_Cal = avg($S2_HR6_Raw);
+
         //----------------------------Setting--------------------------------
         $S_ES = $_REQUEST['ES'];
         $S_Sensor = $_REQUEST['PO_Sensor'];
@@ -87,10 +116,15 @@
         $S_Res2_Cal = avg($S_Res2_Raw);
         $S_Res3_Cal = avg($S_Res3_Raw);
 
+
         //----------------------------SQL--------------------------------
-        $sql = "INSERT INTO cal_bsm (
-            Code,S_ES,S_Sensor,S_Lead,
-            Room_T,Room_H,
+        $sql = "INSERT INTO cal_fetal_multi (
+            Code,Room_T,Room_H,
+            S1_HR1_Raw,S1_HR2_Raw,S1_HR3_Raw,S1_HR4_Raw,S1_HR5_Raw,S1_HR6_Raw,
+            S1_HR1_Cal,S1_HR2_Cal,S1_HR3_Cal,S1_HR4_Cal,S1_HR5_Cal,S1_HR6_Cal,
+            S2_HR1_Raw,S2_HR2_Raw,S2_HR3_Raw,S2_HR4_Raw,S2_HR5_Raw,S2_HR6_Raw,
+            S2_HR1_Cal,S2_HR2_Cal,S2_HR3_Cal,S2_HR4_Cal,S2_HR5_Cal,S2_HR6_Cal,
+            S_ES,S_Sensor,S_Lead,
             SM_Sys_Raw,SM_Mean_Raw,SM_Dia_Raw,SM_PR_Raw,
             SH_Sys_Raw,SH_Mean_Raw,SH_Dia_Raw,SH_PR_Raw,
             SL_Sys_Raw,SL_Mean_Raw,SL_Dia_Raw,SL_PR_Raw,
@@ -104,8 +138,12 @@
             S_Res1_Raw,S_Res2_Raw,S_Res3_Raw,
             S_Res1_Cal,S_Res2_Cal,S_Res3_Cal
             ) VALUES (
-            '$hosp_code','$S_ES','$S_Sensor','$S_Lead',
-            '$Room_T','$Room_H',
+            '$hosp_code','$Room_T','$Room_H',
+            '$S1_HR1_Raw','$S1_HR2_Raw','$S1_HR3_Raw','$S1_HR4_Raw','$S1_HR4_Raw','$S1_HR5_Raw',
+            '$S1_HR1_Cal','$S1_HR2_Cal','$S1_HR3_Cal','$S1_HR4_Cal','$S1_HR4_Cal','$S1_HR5_Cal',
+            '$S2_HR1_Raw','$S2_HR2_Raw','$S2_HR3_Raw','$S2_HR4_Raw','$S2_HR4_Raw','$S2_HR5_Raw',
+            '$S2_HR1_Cal','$S2_HR2_Cal','$S2_HR3_Cal','$S2_HR4_Cal','$S2_HR4_Cal','$S2_HR5_Cal',
+            '$S_ES','$S_Sensor','$S_Lead',
             '$SM_Sys_Raw','$SM_Mean_Raw','$SM_Dia_Raw','$SM_PR_Raw',
             '$SH_Sys_Raw','$SH_Mean_Raw','$SH_Dia_Raw','$SH_PR_Raw',
             '$SL_Sys_Raw','$SL_Mean_Raw','$SL_Dia_Raw','$SL_PR_Raw',
@@ -118,8 +156,8 @@
             '$S_PO1_Cal','$S_PO2_Cal','$S_PO3_Cal',
             '$S_Res1_Raw','$S_Res2_Raw','$S_Res3_Raw',
             '$S_Res1_Cal','$S_Res2_Cal','$S_Res3_Cal'
-
             )";
+
         $Caldate = date("Y-m-d");
         $upCaldate = "UPDATE cpy SET Caldate = '$Caldate' WHERE Code = '$hosp_code'";
         if (mysqli_query($conn, $sql) && mysqli_query($conn, $upCaldate)) {

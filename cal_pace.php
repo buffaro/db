@@ -47,7 +47,7 @@
 
         <form action="insert_data_pace.php" method="post">
             <div class="container">
-                <h2>Cal Data : <span style="color:blueviolet">Fetal Monitor / Doppler</span></h2>
+                <h2>Cal Data : <span style="color:blueviolet">Pacemaker</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
                 <!-- Room Condition -->
                 <div class="input-group mb-3">

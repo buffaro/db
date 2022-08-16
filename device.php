@@ -70,8 +70,11 @@
         } elseif ($row['Name'] == "Centrifuge") {
             $cal_selector = "cen";
             $pm_selector = "cen";
-        } elseif ($row['Name'] == "Fetal Doppler" || $row['Name'] == "Fetal Monitor(เครื่องฟังเสียงหัวใจเด็ก)") {
+        } elseif ($row['Name'] == "Fetal Doppler") {
             $cal_selector = "fetal";
+            $pm_selector = "fetal";
+        } elseif ($row['Name'] == "Fetal Monitor(เครื่องฟังเสียงหัวใจเด็ก)") {
+            $cal_selector = "fetal_multi";
             $pm_selector = "fetal";
         } elseif ($row['Name'] == "Electrosurgical Unit (ตัดจี้ด้วยไฟฟ้า)") {
             $cal_selector = "esu";
@@ -106,6 +109,9 @@
         } elseif ($row['Name'] == "Ventilator") {
             $cal_selector = "error";
             $pm_selector = "ven";
+        } elseif ($row['Name'] == "Ultrasound(เครื่องรักษาด้วยคลื่นอัลตราซาวน์)") {
+            $cal_selector = "ultrasound";
+            $pm_selector = "ultrasound";
         } else {
             $cal_selector = "error";
             $pm_selector = "error";

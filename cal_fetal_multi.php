@@ -45,17 +45,92 @@
     if ($row = mysqli_fetch_array($result)) {
     ?>
 
-        <form action="insert_data_bsm.php" method="post">
+        <form action="insert_data_fetal_multi.php" method="post">
             <div class="container">
-                <h2>Cal Data : <span style="color:blueviolet">Bedside Monitor</span></h2>
+                <h2>Cal Data : <span style="color:blueviolet">Fetal Monitor</span></h2>
                 <h5>Code : <span><input type="text" name="hosp_code" value="<?php echo $device ?>" readonly></span></h5>
-                <label for="hos_code" class="form-label">Room Condition</label>
                 <!-- Room Condition -->
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Temperature</span>
                     <input type="number" step="0.01" name="Room_T" class="form-control" value="">
                     <span class="input-group-text col-3">Humidity</span>
                     <input type="number" step="0.01" name="Room_H" class="form-control" value="">
+                </div>
+                <!-- Fetal Heart Rate CH 1 -->
+                <label for="hos_code" class="form-label">Heart Rate CH 1</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Set</span>
+                    <input type="number" step="0.01" name="ecgs1_60" class="form-control" value="60" disabled>
+                    <input type="number" step="0.01" name="ecgs1_90" class="form-control" value="90" disabled>
+                    <input type="number" step="0.01" name="ecgs1_120" class="form-control" value="120" disabled>
+                    <input type="number" step="0.01" name="ecgs1_150" class="form-control" value="150" disabled>
+                    <input type="number" step="0.01" name="ecgs1_180" class="form-control" value="180" disabled>
+                    <input type="number" step="0.01" name="ecgs1_210" class="form-control" value="210" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 1</span>
+                    <input type="number" step="0.01" name="ecgr11_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr11_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr11_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr11_150" class="form-control">
+                    <input type="number" step="0.01" name="ecgr11_180" class="form-control">
+                    <input type="number" step="0.01" name="ecgr11_210" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 2</span>
+                    <input type="number" step="0.01" name="ecgr21_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr21_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr21_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr21_150" class="form-control">
+                    <input type="number" step="0.01" name="ecgr21_180" class="form-control">
+                    <input type="number" step="0.01" name="ecgr21_210" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 3</span>
+                    <input type="number" step="0.01" name="ecgr31_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr31_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr31_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr31_150" class="form-control">
+                    <input type="number" step="0.01" name="ecgr31_180" class="form-control">
+                    <input type="number" step="0.01" name="ecgr31_210" class="form-control">
+                </div>
+                <!-- Fetal Heart Rate CH 2 -->
+                <label for="hos_code" class="form-label">Heart Rate CH 2</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Set</span>
+                    <input type="number" step="0.01" name="ecgs2_60" class="form-control" value="60" disabled>
+                    <input type="number" step="0.01" name="ecgs2_90" class="form-control" value="90" disabled>
+                    <input type="number" step="0.01" name="ecgs2_120" class="form-control" value="120" disabled>
+                    <input type="number" step="0.01" name="ecgs2_150" class="form-control" value="150" disabled>
+                    <input type="number" step="0.01" name="ecgs2_180" class="form-control" value="180" disabled>
+                    <input type="number" step="0.01" name="ecgs2_210" class="form-control" value="210" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 1</span>
+                    <input type="number" step="0.01" name="ecgr12_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr12_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr12_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr12_150" class="form-control">
+                    <input type="number" step="0.01" name="ecgr12_180" class="form-control">
+                    <input type="number" step="0.01" name="ecgr12_210" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 2</span>
+                    <input type="number" step="0.01" name="ecgr22_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr22_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr22_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr22_150" class="form-control">
+                    <input type="number" step="0.01" name="ecgr22_180" class="form-control">
+                    <input type="number" step="0.01" name="ecgr22_210" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text col-3">Read 3</span>
+                    <input type="number" step="0.01" name="ecgr32_60" class="form-control">
+                    <input type="number" step="0.01" name="ecgr32_90" class="form-control">
+                    <input type="number" step="0.01" name="ecgr32_120" class="form-control">
+                    <input type="number" step="0.01" name="ecgr32_150" class="form-control">
+                    <input type="number" step="0.01" name="ecgr32_180" class="form-control">
+                    <input type="number" step="0.01" name="ecgr32_210" class="form-control">
                 </div>
                 <!-- Normal -->
                 <label for="Setting" class="form-label">Setting</label>

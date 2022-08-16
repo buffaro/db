@@ -61,7 +61,6 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Envelope Shift</span>
                     <select name="ES" class="form-select" aria-label="">
-                        <option selected>0</option>
                         <option value="10">10</option>
                         <option value="9">9</option>
                         <option value="8">8</option>
@@ -72,7 +71,7 @@
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
-                        <option value="0">0</option>
+                        <option selected>0</option>
                         <option value="-1">-1</option>
                         <option value="-2">-2</option>
                         <option value="-3">-3</option>
