@@ -107,11 +107,23 @@
             $cal_selector = "infant_ven";
             $pm_selector = "ven";
         } elseif ($row['Name'] == "Ventilator") {
-            $cal_selector = "error";
+            $cal_selector = "ven";
             $pm_selector = "ven";
         } elseif ($row['Name'] == "Ultrasound(เครื่องรักษาด้วยคลื่นอัลตราซาวน์)") {
             $cal_selector = "ultrasound";
             $pm_selector = "ultrasound";
+        } elseif ($row['Name'] == "Tens (ลดความเจ็บปวดเฉพาะจุดขนาดเล็ก)") {
+            $cal_selector = "tens";
+            $pm_selector = "tens";
+        } elseif ($row['Name'] == "Interferential Therapy(รักษาด้วยคลื่นความถี่กระแสไฟฟ้า)") {
+            $cal_selector = "es";
+            $pm_selector = "tens";
+        } elseif ($row['Name'] == "Syring Driver") {
+            $cal_selector = "syringe_driver";
+            $pm_selector = "syd";
+        } elseif ($row['Name'] == "Syring Pump") {
+            $cal_selector = "inf";
+            $pm_selector = "inf";
         } else {
             $cal_selector = "error";
             $pm_selector = "error";
@@ -172,6 +184,7 @@
                         <option value="Sphygmomanometer">Sphygmomanometer</option>
                         <option value="Spiro meter">Spiro meter</option>
                         <option value="Syring Driver">Syring Driver</option>
+                        <option value="Syring Pump">Syring Pump</option>
                         <option value="Tens (ลดความเจ็บปวดเฉพาะจุดขนาดเล็ก)">Tens (ลดความเจ็บปวดเฉพาะจุดขนาดเล็ก)</option>
                         <option value="Traction (ชุดดึงคอและหลังอัตโนมัติ)">Traction (ชุดดึงคอและหลังอัตโนมัติ)</option>
                         <option value="Treadmill(ลู่วิ่งไฟฟ้า)">Treadmill(ลู่วิ่งไฟฟ้า)</option>

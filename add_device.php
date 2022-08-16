@@ -85,6 +85,7 @@
           <option value="Sphygmomanometer">Sphygmomanometer</option>
           <option value="Spiro meter">Spiro meter</option>
           <option value="Syring Driver">Syring Driver</option>
+          <option value="Syring Pump">Syring Pump</option>
           <option value="Tens (ลดความเจ็บปวดเฉพาะจุดขนาดเล็ก)">Tens (ลดความเจ็บปวดเฉพาะจุดขนาดเล็ก)</option>
           <option value="Traction (ชุดดึงคอและหลังอัตโนมัติ)">Traction (ชุดดึงคอและหลังอัตโนมัติ)</option>
           <option value="Treadmill(ลู่วิ่งไฟฟ้า)">Treadmill(ลู่วิ่งไฟฟ้า)</option>
