@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Cordia New';
+    src:url('/db/fonts/cordia.ttc');
+}
+@font-face {
+    font-family: 'TH Sarabun New';
+    src:url('/db/fonts/Sarabun-Regular.ttf');
+}
+body{
+    font-family: 'TH Sarabun New';
+    /* font-size: 16pt; */
+}
