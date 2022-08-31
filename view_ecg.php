@@ -67,7 +67,7 @@
 
 
 
-  $sql = "SELECT * FROM cal_cen WHERE Code LIKE '%$code%'";
+  $sql = "SELECT * FROM cal_ecg WHERE Code LIKE '%$code%'";
   $result = mysqli_query($conn, $sql);
 
   echo "<table class='table table-striped table-dark'>
@@ -75,9 +75,9 @@
             <th>Code</th>
             <th>Temp</th>
             <th>Humi</th>
-            <th class='lTd'>Set</th>
-            <th>Read</th>
-            <th>Time</th>
+            <th class='lTd'>Heart Rate</th>
+            <th class='lTd'>Speed</th>
+            <th class='lTd'>Sensitivity</th>
             </tr>
             ";
   while ($row = mysqli_fetch_array($result)) {
@@ -85,36 +85,28 @@
     echo "<td>" . $row['Code'] . "</td>";
     echo "<td>" . $row['Room_T'] . "</td>";
     echo "<td>" . $row['Room_H'] . "</td>";
-    echo "<td class='lTd'>" . $row['S_Cen1'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen1_Cal']) . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Time1_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P1($row['S_HR1_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P0($row['S_Spd1_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P0($row['S_Sen1_Cal']) . "</td>";
     echo "</tr>";
     // -------------------
     echo "<tr>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen2'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen2_Cal']) . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Time2_Cal']) . "</td>";
-    echo "</tr>";
-    // -------------------
-    echo "<tr>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen3'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen3_Cal']) . "</td>";
-    echo "<td class='lTd'></td>";
+    echo "<td class='lTd'>" . P1($row['S_HR2_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P0($row['S_Spd2_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P0($row['S_Sen2_Cal']) . "</td>";
     echo "</tr>";
     // -------------------
     echo "<tr class='bTd'>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen4'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen4_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P1($row['S_HR3_Cal']) . "</td>";
     echo "<td class='lTd'></td>";
+    echo "<td class='lTd'>" . P0($row['S_Sen3_Cal']) . "</td>";
+
     echo "</tr>";
   }
   echo "</table>";
