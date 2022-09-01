@@ -67,7 +67,7 @@
 
 
 
-  $sql = "SELECT * FROM cal_cen WHERE Code LIKE '%$code%'";
+  $sql = "SELECT * FROM cal_infant_ven WHERE Code LIKE '%$code%'";
   $result = mysqli_query($conn, $sql);
 
   echo "<table class='table table-striped table-dark'>
@@ -75,9 +75,10 @@
             <th>Code</th>
             <th>Temp <span style='opacity:0.4'>(°C)</span></th>
             <th>Humi <span style='opacity:0.4'>(%RH)</span></th>
-            <th class='lTd'>Set <span style='opacity:0.4'>(rpm)</span></th>
-            <th>Read <span style='opacity:0.4'>(rpm)</span></th>
-            <th>Time <span style='opacity:0.4'>(min)</span></th>
+            <th class='lTd'>Breath Rate <span style='opacity:0.4'>(bpm)</span></th>
+            <th class='lTd'>PIP <span style='opacity:0.4'>(cmH2O)</span></th>
+            <th class='lTd'>PEEP <span style='opacity:0.4'>(cmH2O)</span></th>
+            <th class='lTd'>Ins.Time <span style='opacity:0.4'>(sec)</span></th>
             </tr>
             ";
   while ($row = mysqli_fetch_array($result)) {
@@ -85,37 +86,32 @@
     echo "<td>" . $row['Code'] . "</td>";
     echo "<td>" . $row['Room_T'] . "</td>";
     echo "<td>" . $row['Room_H'] . "</td>";
-    echo "<td class='lTd'>" . $row['S_Cen1'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen1_Cal']) . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Time1_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['A_UUT1_Cal']) . " <span style='color:red'>Master:</span> " . P1($row['A_Mas1_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['A_UUT2_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['A_Mas2_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['A_UUT3_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['A_Mas3_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P1($row['A_UUT4_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['A_Mas4_Cal']) . "</td>";
     echo "</tr>";
     // -------------------
     echo "<tr>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen2'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen2_Cal']) . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Time2_Cal']) . "</td>";
-    echo "</tr>";
-    // -------------------
-    echo "<tr>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen3'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen3_Cal']) . "</td>";
-    echo "<td class='lTd'></td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['B_UUT1_Cal']) . " <span style='color:red'>Master:</span> " . P1($row['B_Mas1_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['B_UUT2_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['B_Mas2_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['B_UUT3_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['B_Mas3_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P1($row['B_UUT4_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['B_Mas4_Cal']) . "</td>";
     echo "</tr>";
     // -------------------
     echo "<tr class='bTd'>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen4'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen4_Cal']) . "</td>";
-    echo "<td class='lTd'></td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['C_UUT1_Cal']) . " <span style='color:red'>Master:</span> " . P1($row['C_Mas1_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['C_UUT2_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['C_Mas2_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P0($row['C_UUT3_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['C_Mas3_Cal']) . "</td>";
+    echo "<td class='lTd'><span style='color:yellow'>UUT:</span> " . P1($row['C_UUT4_Cal']) . " <span style='color:red'>Master:</span> " . P2($row['C_Mas4_Cal']) . "</td>";
     echo "</tr>";
+   
   }
   echo "</table>";
 

@@ -96,3 +96,9 @@ function C0($set, $cal)
     }
     return $bf . number_format((int)($cal - $set));
 }
+
+function N0($raw)
+{
+    if($raw == NULL) return "-";
+    return $raw;
+}

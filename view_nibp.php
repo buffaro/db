@@ -67,7 +67,7 @@
 
 
 
-  $sql = "SELECT * FROM cal_cen WHERE Code LIKE '%$code%'";
+  $sql = "SELECT * FROM cal_bsm WHERE Code LIKE '%$code%'";
   $result = mysqli_query($conn, $sql);
 
   echo "<table class='table table-striped table-dark'>
@@ -75,9 +75,10 @@
             <th>Code</th>
             <th>Temp <span style='opacity:0.4'>(°C)</span></th>
             <th>Humi <span style='opacity:0.4'>(%RH)</span></th>
-            <th class='lTd'>Set <span style='opacity:0.4'>(rpm)</span></th>
-            <th>Read <span style='opacity:0.4'>(rpm)</span></th>
-            <th>Time <span style='opacity:0.4'>(min)</span></th>
+            <th class='lTd'>Systolic <span style='opacity:0.4'>(mmHg)</span></th>
+            <th>Mean <span style='opacity:0.4'>(mmHg)</span></th>
+            <th>Diastolic <span style='opacity:0.4'>(mmHg)</span></th>
+            <th>Pulse Rate <span style='opacity:0.4'>(bpm)</span></th>
             </tr>
             ";
   while ($row = mysqli_fetch_array($result)) {
@@ -85,36 +86,29 @@
     echo "<td>" . $row['Code'] . "</td>";
     echo "<td>" . $row['Room_T'] . "</td>";
     echo "<td>" . $row['Room_H'] . "</td>";
-    echo "<td class='lTd'>" . $row['S_Cen1'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen1_Cal']) . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Time1_Cal']) . "</td>";
+    echo "<td class='lTd'>" . P1($row['SM_Sys_Cal']) . " (" . C1($row['SL_Sys'], $row['SM_Sys_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SM_Mean_Cal']) . " (" . C1($row['SL_Mean'], $row['SM_Mean_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SM_Dia_Cal']) . " (" . C1($row['SL_Dia'], $row['SM_Dia_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SM_PR_Cal']) . " (" . C1($row['SL_PR'], $row['SM_PR_Cal']) . ")</td>";
     echo "</tr>";
     // -------------------
     echo "<tr>";
     echo "<td></td>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen2'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen2_Cal']) . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Time2_Cal']) . "</td>";
-    echo "</tr>";
-    // -------------------
-    echo "<tr>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen3'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen3_Cal']) . "</td>";
-    echo "<td class='lTd'></td>";
+    echo "<td colspan='2'>Envelop Shift = ".$row['S_ES']."</td>";
+    echo "<td class='lTd'>" . P1($row['SH_Sys_Cal']) . " (" . C1($row['SH_Sys'], $row['SH_Sys_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SH_Mean_Cal']) . " (" . C1($row['SH_Mean'], $row['SH_Mean_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SH_Dia_Cal']) . " (" . C1($row['SH_Dia'], $row['SH_Dia_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SH_PR_Cal']) . " (" . C1($row['SH_PR'], $row['SH_PR_Cal']) . ")</td>";
     echo "</tr>";
     // -------------------
     echo "<tr class='bTd'>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td class='lTd'>" . $row['S_Cen4'] . "</td>";
-    echo "<td class='lTd'>" . P2($row['S_Cen4_Cal']) . "</td>";
-    echo "<td class='lTd'></td>";
+    echo "<td class='lTd'>" . P1($row['SL_Sys_Cal']) . " (" . C1($row['SM_Sys'], $row['SL_Sys_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SL_Mean_Cal']) . " (" . C1($row['SM_Mean'], $row['SL_Mean_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SL_Dia_Cal']) . " (" . C1($row['SM_Dia'], $row['SL_Dia_Cal']) . ")</td>";
+    echo "<td>" . P1($row['SL_PR_Cal']) . " (" . C1($row['SM_PR'], $row['SL_PR_Cal']) . ")</td>";
     echo "</tr>";
   }
   echo "</table>";

@@ -139,10 +139,10 @@
             S_Res1_Cal,S_Res2_Cal,S_Res3_Cal
             ) VALUES (
             '$hosp_code','$Room_T','$Room_H',
-            '$S1_HR1_Raw','$S1_HR2_Raw','$S1_HR3_Raw','$S1_HR4_Raw','$S1_HR4_Raw','$S1_HR5_Raw',
-            '$S1_HR1_Cal','$S1_HR2_Cal','$S1_HR3_Cal','$S1_HR4_Cal','$S1_HR4_Cal','$S1_HR5_Cal',
-            '$S2_HR1_Raw','$S2_HR2_Raw','$S2_HR3_Raw','$S2_HR4_Raw','$S2_HR4_Raw','$S2_HR5_Raw',
-            '$S2_HR1_Cal','$S2_HR2_Cal','$S2_HR3_Cal','$S2_HR4_Cal','$S2_HR4_Cal','$S2_HR5_Cal',
+            '$S1_HR1_Raw','$S1_HR2_Raw','$S1_HR3_Raw','$S1_HR4_Raw','$S1_HR5_Raw','$S1_HR6_Raw',
+            '$S1_HR1_Cal','$S1_HR2_Cal','$S1_HR3_Cal','$S1_HR4_Cal','$S1_HR5_Cal','$S1_HR6_Cal',
+            '$S2_HR1_Raw','$S2_HR2_Raw','$S2_HR3_Raw','$S2_HR4_Raw','$S2_HR5_Raw','$S2_HR6_Raw',
+            '$S2_HR1_Cal','$S2_HR2_Cal','$S2_HR3_Cal','$S2_HR4_Cal','$S2_HR5_Cal','$S2_HR6_Cal',
             '$S_ES','$S_Sensor','$S_Lead',
             '$SM_Sys_Raw','$SM_Mean_Raw','$SM_Dia_Raw','$SM_PR_Raw',
             '$SH_Sys_Raw','$SH_Mean_Raw','$SH_Dia_Raw','$SH_PR_Raw',

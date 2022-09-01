@@ -73,11 +73,11 @@
   echo "<table class='table table-striped table-dark'>
             <tr href='#' class='header'>
             <th>Code</th>
-            <th>Temp</th>
-            <th>Humi</th>
-            <th class='lTd'>Heart Rate</th>
-            <th class='lTd'>Speed</th>
-            <th class='lTd'>Sensitivity</th>
+            <th>Temp <span style='opacity:0.4'>(°C)</span></th>
+            <th>Humi <span style='opacity:0.4'>(%RH)</span></th>
+            <th class='lTd'>Heart Rate <span style='opacity:0.4'>(bpm)</span></th>
+            <th class='lTd'>Speed <span style='opacity:0.4'>(mm/s)</span></th>
+            <th class='lTd'>Sensitivity <span style='opacity:0.4'>(mm/mv)</span></th>
             </tr>
             ";
   while ($row = mysqli_fetch_array($result)) {

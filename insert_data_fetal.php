@@ -67,10 +67,10 @@
             S2_HR1_Cal,S2_HR2_Cal,S2_HR3_Cal,S2_HR4_Cal,S2_HR5_Cal,S2_HR6_Cal
             ) VALUES (
             '$hosp_code','$Room_T','$Room_H',
-            '$S1_HR1_Raw','$S1_HR2_Raw','$S1_HR3_Raw','$S1_HR4_Raw','$S1_HR4_Raw','$S1_HR5_Raw',
-            '$S1_HR1_Cal','$S1_HR2_Cal','$S1_HR3_Cal','$S1_HR4_Cal','$S1_HR4_Cal','$S1_HR5_Cal',
-            '$S2_HR1_Raw','$S2_HR2_Raw','$S2_HR3_Raw','$S2_HR4_Raw','$S2_HR4_Raw','$S2_HR5_Raw',
-            '$S2_HR1_Cal','$S2_HR2_Cal','$S2_HR3_Cal','$S2_HR4_Cal','$S2_HR4_Cal','$S2_HR5_Cal'
+            '$S1_HR1_Raw','$S1_HR2_Raw','$S1_HR3_Raw','$S1_HR4_Raw','$S1_HR5_Raw','$S1_HR6_Raw',
+            '$S1_HR1_Cal','$S1_HR2_Cal','$S1_HR3_Cal','$S1_HR4_Cal','$S1_HR5_Cal','$S1_HR6_Cal',
+            '$S2_HR1_Raw','$S2_HR2_Raw','$S2_HR3_Raw','$S2_HR4_Raw','$S2_HR5_Raw','$S2_HR6_Raw',
+            '$S2_HR1_Cal','$S2_HR2_Cal','$S2_HR3_Cal','$S2_HR4_Cal','$S2_HR5_Cal','$S2_HR6_Cal'
             )";
 
         $Caldate = date("Y-m-d");
