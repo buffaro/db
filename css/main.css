@@ -10,3 +10,13 @@ body{
     font-family: 'TH Sarabun New';
     /* font-size: 16pt; */
 }
+.header {
+    position: sticky;
+    top: 0px;
+}
+.lTd{
+    border-left: 1px solid white;
+}
+.bTd{
+    border-bottom: 1px solid white;
+}
