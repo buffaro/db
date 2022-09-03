@@ -70,11 +70,13 @@
         $sql = "INSERT INTO cal_pressure (
             Code,Room_T,Room_H,
             Press_Unit,
+            Press1,Press2,Press3,Press4,Press5,Press6,Press7,Press8,Press9,Press10,
             Press1_Raw,Press2_Raw,Press3_Raw,Press4_Raw,Press5_Raw,Press6_Raw,Press7_Raw,Press8_Raw,Press9_Raw,Press10_Raw,
             Press1_Cal,Press2_Cal,Press3_Cal,Press4_Cal,Press5_Cal,Press6_Cal,Press7_Cal,Press8_Cal,Press9_Cal,Press10_Cal
             ) VALUES (
             '$hosp_code','$Room_T','$Room_H',
             '$Press_Unit',
+            '$Press1','$Press2','$Press3','$Press4','$Press5','$Press6','$Press7','$Press8','$Press9','$Press10',
             '$Press1_Raw','$Press2_Raw','$Press3_Raw','$Press4_Raw','$Press5_Raw','$Press6_Raw','$Press7_Raw','$Press8_Raw','$Press9_Raw','$Press10_Raw',
             '$Press1_Cal','$Press2_Cal','$Press3_Cal','$Press4_Cal','$Press5_Cal','$Press6_Cal','$Press7_Cal','$Press8_Cal','$Press9_Cal','$Press10_Cal'
             )";
