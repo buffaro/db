@@ -33,6 +33,18 @@
         $A_Unit = $_REQUEST['A_Unit'];
         $B_Head = $_REQUEST['B_Head'];
         $B_Unit = $_REQUEST['B_Unit'];
+
+        //--------------------------Power Set------------------------------
+        $A_Watt_S_1 = $_REQUEST['A_Watt_S_1'];
+        $A_Watt_S_2 = $_REQUEST['A_Watt_S_2'];
+        $A_Watt_S_3 = $_REQUEST['A_Watt_S_3'];
+        $A_Watt_S_4 = $_REQUEST['A_Watt_S_4'];
+        $A_Watt_S_5 = $_REQUEST['A_Watt_S_5'];
+        $B_Watt_S_1 = $_REQUEST['B_Watt_S_1'];
+        $B_Watt_S_2 = $_REQUEST['B_Watt_S_2'];
+        $B_Watt_S_3 = $_REQUEST['B_Watt_S_3'];
+        $B_Watt_S_4 = $_REQUEST['B_Watt_S_4'];
+        $B_Watt_S_5 = $_REQUEST['B_Watt_S_5'];
         //----------------------------Power--------------------------------
         $A_Watt_Raw_1 = $_REQUEST['A_Watt_R1_1'] . ',' . $_REQUEST['A_Watt_R2_1'] . ',' . $_REQUEST['A_Watt_R3_1'];
         $A_Watt_Raw_2 = $_REQUEST['A_Watt_R1_2'] . ',' . $_REQUEST['A_Watt_R2_2'] . ',' . $_REQUEST['A_Watt_R3_2'];
@@ -59,6 +71,8 @@
         $sql = "INSERT INTO cal_ultrasound (
             Code,Room_T,Room_H,
             A_Head,A_Unit,B_Head,B_Unit,
+            A_Watt_S_1,A_Watt_S_2,A_Watt_S_3,A_Watt_S_4,A_Watt_S_5,
+            B_Watt_S_1,B_Watt_S_2,B_Watt_S_3,B_Watt_S_4,B_Watt_S_5,
             A_Watt_Raw_1,A_Watt_Raw_2,A_Watt_Raw_3,A_Watt_Raw_4,A_Watt_Raw_5,
             A_Watt_Cal_1,A_Watt_Cal_2,A_Watt_Cal_3,A_Watt_Cal_4,A_Watt_Cal_5,
             B_Watt_Raw_1,B_Watt_Raw_2,B_Watt_Raw_3,B_Watt_Raw_4,B_Watt_Raw_5,
@@ -66,6 +80,8 @@
             ) VALUES (
             '$hosp_code','$Room_T','$Room_H',
             '$A_Head','$A_Unit','$B_Head','$B_Unit',
+            '$A_Watt_S_1','$A_Watt_S_2','$A_Watt_S_3','$A_Watt_S_4','$A_Watt_S_5',
+            '$B_Watt_S_1','$B_Watt_S_2','$B_Watt_S_3','$B_Watt_S_4','$B_Watt_S_5',
             '$A_Watt_Raw_1','$A_Watt_Raw_2','$A_Watt_Raw_3','$A_Watt_Raw_4','$A_Watt_Raw_5',
             '$A_Watt_Cal_1','$A_Watt_Cal_2','$A_Watt_Cal_3','$A_Watt_Cal_4','$A_Watt_Cal_5',
             '$B_Watt_Raw_1','$B_Watt_Raw_2','$B_Watt_Raw_3','$B_Watt_Raw_4','$B_Watt_Raw_5',
