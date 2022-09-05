@@ -88,13 +88,21 @@
     echo "<td class='lTd'>" . P0($row['S_Sen2_Cal']) . "</td>";
     echo "</tr>";
     // -------------------
-    echo "<tr class='bTd'>";
+    echo "<tr>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
     echo "<td class='lTd'>" . P1($row['S_HR3_Cal']) . "</td>";
     echo "<td class='lTd'></td>";
     echo "<td class='lTd'>" . P0($row['S_Sen3_Cal']) . "</td>";
+    // -------------------
+    echo "<tr class='bTd'>";
+    echo "<td></td>";
+    echo "<td></td>";
+    echo "<td></td>";
+    echo "<td class='lTd'>" . P1($row['S_HR4_Cal']) . "</td>";
+    echo "<td class='lTd'></td>";
+    echo "<td class='lTd'></td>";
 
     echo "</tr>";
   }

@@ -135,6 +135,9 @@
             <div class="container">
                 <!-- Form -->
                 <h2>Devices Data</h2>
+                <span><button type="button" class="btn btn-primary btn-sm" onclick="window.open('view_'+'<?php echo $cal_selector ?>'+'.php?code='+'<?php echo $row['Code']; ?>')">
+                        View
+                    </button></span>
                 <div class="mb-3">
                     <label for="hos_code" class="form-label">Hospital Code</label>
                     <input type="text" class="form-control" name="hosp_code" placeholder="CHC-00000" value="<?php echo $row['Code']; ?>" readonly>
@@ -262,7 +265,7 @@
                     <button type="button" class="btn btn-primary col-4" onclick="window.open('pm_'+'<?php echo $pm_selector ?>'+'.php?Code='+'<?php echo $row['Code']; ?>')">
                         <h2>PM</h2> [ ล่าสุด: <?php echo $row['PMdate']; ?> ]
                     </button>
-                    <button type="submit" class="btn btn-outline-warning col-4"><h4>Update</h4></button>
+                    <button type="submit" class="btn btn-outline-warning col-2"><h4>Update</h4></button>
                 </div>
 
             </div>

@@ -56,7 +56,7 @@
 
 
 
-  $sql = "SELECT * FROM cal_bsm WHERE Code LIKE '%$code%'";
+  $sql = "SELECT * FROM cal_nibp WHERE Code LIKE '%$code%'";
   $result = mysqli_query($conn, $sql);
 
   echo "<table class='table table-striped table-dark'>
