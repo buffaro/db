@@ -78,7 +78,14 @@
     echo "</tr>";
     // -------------------
     echo "<tr>";
-    echo "<td></td>";
+    // Caldate
+    $c = $row['Code'];
+    $sql2 = "SELECT * FROM cpy WHERE Code = '$c'";
+    $result2 = mysqli_query($conn, $sql2);
+    if ($row2 = mysqli_fetch_array($result2)) {
+      echo "<td><span style='color:#0CFF00'>" . $row2['Caldate'] . "</span></td>";
+    }
+    // -------
     echo "<td colspan='2'>SpO2 Sensor = ".$row['S_Sensor']."</td>";
     echo "<td class='lTd'>" . P1($row['S_HR2_Cal']) . "</td>";
     echo "<td class='lTd'>" . P1($row['S_PO2_Cal']) . "</td>";

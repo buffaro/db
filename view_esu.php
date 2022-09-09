@@ -100,7 +100,14 @@
     echo "</tr>";
     // -------------------
     echo "<tr>";
-    echo "<td></td>";
+    // Caldate
+    $c = $row['Code'];
+    $sql2 = "SELECT * FROM cpy WHERE Code = '$c'";
+    $result2 = mysqli_query($conn, $sql2);
+    if ($row2 = mysqli_fetch_array($result2)) {
+      echo "<td><span style='color:#0CFF00'>" . $row2['Caldate'] . "</span></td>";
+    }
+    // -------
     echo "<td>HF A-E <span style='opacity:0.4'>(mA)</span></td>";
     echo "<td>" . P1($row['HF_AE']) . "</td>";
     echo "<td class='lTd'><span style='color:yellow'>" . P0($row['M_Cut1_Load']) . "</span></td>";
