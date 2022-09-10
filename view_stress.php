@@ -108,7 +108,7 @@
     echo "<td></td>";
     echo "<td></td>";
     echo "<td></td>";
-    echo "<td></td>";
+    echo "<td class='lTd'>" . P1($row['S_HR4_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['S_Speed4']) . "</td>";
     echo "<td class='lTd'>" . P3($row['S_Speed4_Cal']) . "</td>";
     echo "</tr>";
