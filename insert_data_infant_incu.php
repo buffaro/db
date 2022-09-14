@@ -48,7 +48,7 @@
         //----------------------------Flow Meter----------------------------------
         $Fl1_Raw = $_REQUEST['flowr1_3'] . ',' . $_REQUEST['flowr2_3'] . ',' . $_REQUEST['flowr3_3'];
         $Fl2_Raw = $_REQUEST['flowr1_5'] . ',' . $_REQUEST['flowr2_5'] . ',' . $_REQUEST['flowr3_5'];
-        $Fl3_Raw = $_REQUEST['flowr3_10'] . ',' . $_REQUEST['flowr3_10'] . ',' . $_REQUEST['flowr3_10'];
+        $Fl3_Raw = $_REQUEST['flowr1_10'] . ',' . $_REQUEST['flowr2_10'] . ',' . $_REQUEST['flowr3_10'];
         $Fl1_Cal = avg($Fl1_Raw);
         $Fl2_Cal = avg($Fl2_Raw);
         $Fl3_Cal = avg($Fl3_Raw);
