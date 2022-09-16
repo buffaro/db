@@ -135,7 +135,7 @@
             <div class="container">
                 <!-- Form -->
                 <h2>Devices Data</h2>
-                <span><button type="button" class="btn btn-primary btn-sm" onclick="window.open('view_'+'<?php echo $cal_selector ?>'+'.php?code='+'<?php echo $row['Code']; ?>')">
+                <span><button type="button" class="btn btn-primary btn-sm" onclick="window.open('view_'+'<?php echo $pm_selector ?>'+'.php?code='+'<?php echo $row['Code']; ?>')">
                         View
                     </button></span>
                 <div class="mb-3">
