@@ -102,3 +102,12 @@ function N0($raw)
     if($raw == NULL) return "-";
     return $raw;
 }
+function Chk($raw)
+{
+    if($raw == "pass") return "<span style='color:green'>✓</span>";
+    if($raw == "no") return "<span style='color:yellow'>-</span>";
+    if($raw == "false") return "<span style='color:red'>✗</span>";
+    return $raw;
+}
+
+?>

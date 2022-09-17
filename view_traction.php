@@ -80,9 +80,9 @@
     echo "<td>" . $row['Room_T'] . "</td>";
     echo "<td>" . $row['Room_H'] . "</td>";
     echo "<td class='lTd'>" . P0($row['S_Force1']) . "</td>";
-    echo "<td>" . P1($row['S_Force1_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Force1_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['S_Rest1']) . "</td>";
-    echo "<td>" . P1($row['S_Rest1_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Rest1_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Force1']) . "</td>";
     echo "<td>" . P2($row['T_Force1_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Rest1']) . "</td>";
@@ -101,9 +101,9 @@
     echo "<td></td>";
     echo "<td></td>";
     echo "<td class='lTd'>" . P0($row['S_Force2']) . "</td>";
-    echo "<td>" . P1($row['S_Force2_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Force2_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['S_Rest2']) . "</td>";
-    echo "<td>" . P1($row['S_Rest2_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Rest2_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Force2']) . "</td>";
     echo "<td>" . P2($row['T_Force2_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Rest2']) . "</td>";
@@ -115,9 +115,9 @@
     echo "<td></td>";
     echo "<td></td>";
     echo "<td class='lTd'>" . P0($row['S_Force3']) . "</td>";
-    echo "<td>" . P1($row['S_Force3_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Force3_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['S_Rest3']) . "</td>";
-    echo "<td>" . P1($row['S_Rest3_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Rest3_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Force3']) . "</td>";
     echo "<td>" . P2($row['T_Force3_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Rest3']) . "</td>";
@@ -130,9 +130,9 @@
     echo "<td></td>";
     echo "<td></td>";
     echo "<td class='lTd'>" . P0($row['S_Force4']) . "</td>";
-    echo "<td>" . P1($row['S_Force4_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Force4_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['S_Rest4']) . "</td>";
-    echo "<td>" . P1($row['S_Rest4_Cal']) . "</td>";
+    echo "<td>" . P2($row['S_Rest4_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Force4']) . "</td>";
     echo "<td>" . P2($row['T_Force4_Cal']) . "</td>";
     echo "<td class='lTd'>" . P0($row['T_Rest4']) . "</td>";
