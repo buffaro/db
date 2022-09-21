@@ -120,7 +120,7 @@
     echo "<td></td>";
     echo "<td></td>";
     echo "<td class='lTd'>" . PM($row2['Name'],6) . "</td>";
-    echo "<td class='lTd'>" . Chk($row['PM_V_Checked5']) . "</td>";  
+    echo "<td class='lTd'>" . Chk($row['PM_V_Checked6']) . "</td>";  
     echo "</tr>";
     // -------------------
     echo "<tr>";

@@ -75,7 +75,7 @@
             $pm_selector = "fetal";
         } elseif ($row['Name'] == "Fetal Monitor(เครื่องฟังเสียงหัวใจเด็ก)") {
             $cal_selector = "fetal_multi";
-            $pm_selector = "fetal";
+            $pm_selector = "fetal_multi";
         } elseif ($row['Name'] == "Electrosurgical Unit (ตัดจี้ด้วยไฟฟ้า)") {
             $cal_selector = "esu";
             $pm_selector = "esu";
