@@ -179,6 +179,7 @@
                         <option value="Monitor(MRI)">Monitor(MRI)</option>
                         <option value="Neopuff">Neopuff</option>
                         <option value="Oxygen Flow Meter">Oxygen Flow Meter</option>
+                        <option value="Oxygen High Flow">Oxygen High Flow</option>
                         <option value="PaceMaker (เครื่องกระตุ้นหัวใจ)">PaceMaker (เครื่องกระตุ้นหัวใจ)</option>
                         <option value="Pneumetic Compression">Pneumetic Compression</option>
                         <option value="Pressure Cuff">Pressure Cuff</option>
