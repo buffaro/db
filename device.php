@@ -67,6 +67,9 @@
         } elseif ($row['Name'] == "Infant Incubator(ตู้อบเด็กทารก)" || $row['Name'] == "Infant Warmer (ช่วยเด็กแรกเกิด)" || $row['Name'] == "Radiant warmer(ให้ความอบอุ่นเด็กด้วยแสง)") {
             $cal_selector = "infant_incu";
             $pm_selector = "infant_incu";
+        } elseif ($row['Name'] == "Infant T-piece resuscitator") {
+            $cal_selector = "pressure";
+            $pm_selector = "pressure";
         } elseif ($row['Name'] == "Centrifuge") {
             $cal_selector = "cen";
             $pm_selector = "cen";
@@ -170,6 +173,7 @@
                         <option value="Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)">Hydrocollator(เครื่องต้มแผ่นให้ความร้อน)</option>
                         <option value="Hypo / Hyperthermia">Hypo / Hyperthermia</option>
                         <option value="Infant Incubator(ตู้อบเด็กทารก)">Infant Incubator(ตู้อบเด็กทารก)</option>
+                        <option value="Infant T-piece resuscitator">Infant T-piece resuscitator</option>
                         <option value="Infant Ventilator">Infant Ventilator</option>
                         <option value="Infant Warmer (ช่วยเด็กแรกเกิด)">Infant Warmer (ช่วยเด็กแรกเกิด)</option>
                         <option value="Interferential Therapy(รักษาด้วยคลื่นความถี่กระแสไฟฟ้า)">Interferential Therapy(รักษาด้วยคลื่นความถี่กระแสไฟฟ้า)</option>

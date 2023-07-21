@@ -142,7 +142,7 @@
                 </div>
 
                 <!-- Suction -->
-                <label for="hos_code" class="form-label">Flow Meter</label>
+                <label for="hos_code" class="form-label">Suction</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text col-3">Set</span>
                     <input type="number" step="0.01" name="sucs_100" class="form-control" value="100" disabled>
